@@ -1,0 +1,76 @@
+.select-images-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.image-input-deleteButton-wrapper {
+  width: 100%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.selected-image {
+  height: 100%;
+  user-select: none;
+}
+
+.input-deletButtonWrapper {
+  display: flex;
+  width: 60%;
+  gap: 1rem;
+}
+
+.image-alt-text-wrapper {
+  width: 70%;
+}
+
+.image-alt-text-input {
+  width: 100%;
+  height: 1.4rem;
+  border: 1px solid #cfb419;
+  padding: 5px;
+}
+
+.image-alt-text-input:focus {
+  outline: none;
+  background: #f5f0d8;
+}
+
+.delete-button-wrapper {
+  width: 20%;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.delete-selected-image-wrapper {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  background: rgb(252, 197, 193);
+  gap: 2rem;
+  align-items: center;
+}
+
+.delete-image-warning {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .image-input-deleteButton-wrapper {
+    justify-content: unset;
+    gap: 0.7rem;
+  }
+
+  .input-deletButtonWrapper {
+    flex-direction: column;
+  }
+}

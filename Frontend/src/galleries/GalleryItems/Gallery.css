@@ -1,0 +1,42 @@
+.wedding-gallery {
+  height: auto;
+  margin: 1rem auto;
+}
+
+.logout-button-wrapper {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.wedding-gallery-logout-button {
+  position: absolute;
+  right: 0;
+}
+
+.scrollToTop {
+  background-color: #cfb419b1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 300;
+  transform: rotate(-90deg);
+  position: fixed;
+  top: calc(100vh - 160px);
+  right: 10px;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.scrollToTop-visible {
+  opacity: 1;
+}

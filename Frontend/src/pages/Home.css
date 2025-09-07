@@ -1,0 +1,101 @@
+.home-wrapper {
+  min-height: 90vh;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.home-components-wrapper {
+  min-height: auto;
+  margin: 1rem auto;
+}
+
+.rows-wrapper {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.text-div {
+  border: 1px solid #cfb419;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.willkommen {
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #404040;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.bei-liebevollbelichtet {
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #cfb419;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.description {
+  font-size: 1rem;
+}
+
+.spruch {
+  text-align: center;
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #cfb419;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1100px) {
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .reverse {
+    flex-direction: column-reverse;
+  }
+
+  .spruch {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 940px) {
+  .spruch {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .spruch {
+    font-size: 1.2rem;
+  }
+}

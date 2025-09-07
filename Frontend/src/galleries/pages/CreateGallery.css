@@ -1,0 +1,136 @@
+.create-gallery-wrapper {
+  width: 100vw;
+  min-height: 80vh;
+}
+
+.create-gallery-form-card {
+  width: 80vw;
+  margin: 30px auto;
+  padding: 0.6rem;
+}
+
+.protected-or-not-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.chekboxes-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(105, 105, 105);
+  border-radius: 5px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-size: 1rem;
+  color: rgb(105, 105, 105);
+  user-select: none;
+}
+
+.create-free-gallery-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.free-gallery-name-input-label {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: rgb(105, 105, 105);
+}
+
+.free-gallery-name-input-label-error {
+  color: red;
+}
+
+.free-gallery-name-input-and-button-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.free-gallery-name-input {
+  height: 1.6rem;
+  width: 300px;
+  border: 1px solid #cfb419;
+  padding: 5px;
+}
+
+.free-gallery-name-input:focus {
+  outline: none;
+  background: #f5f0d8;
+}
+
+.free-gallery-name-input-error {
+  border: 1px solid red;
+  background: #f6e2de;
+}
+
+.free-gallery-name-input-error:focus {
+  background: #f6e2de;
+}
+
+.free-gallery-name-input-error-text {
+  color: red;
+}
+
+.create-protected-gallery-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.create-gallery-title {
+  display: block;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.image-preview {
+  width: 50vw;
+  position: relative;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  .create-gallery-form-card {
+    width: 95vw;
+  }
+
+  .image-preview {
+    width: 95vw;
+  }
+
+  .free-gallery-name-input-and-button-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .create-protected-gallery-form {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,31 @@
+.header {
+  height: 5rem;
+  width: 80vw;
+  margin: 0.5rem auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.logo-liebevoll {
+  height: 100%;
+}
+
+.burgerIcon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .burgerIcon {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+    font-weight: 600;
+  }
+
+  .header {
+    width: 95vw;
+    height: 4rem;
+  }
+}

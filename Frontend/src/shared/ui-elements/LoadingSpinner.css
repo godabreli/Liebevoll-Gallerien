@@ -1,0 +1,34 @@
+.loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  display: flex;
+  background: rgba(255, 255, 255, 0.76);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-spinner--position-top {
+  position: absolute;
+  align-items: flex-start;
+  padding-top: 100px;
+}
+
+.loading-spinner--position-absolute {
+  position: absolute;
+}
+
+.icon-loading--default {
+  font-size: 4rem;
+  color: #cfb419;
+  animation: drehen 2s linear infinite;
+}
+
+@keyframes drehen {
+  100% {
+    transform: rotate(360deg);
+  }
+}

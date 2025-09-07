@@ -1,0 +1,31 @@
+.sideBar {
+  width: 100vw;
+  height: 100vh;
+  background: #ddc95a;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.close-sidebar-button {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3.2rem;
+  font-weight: 300;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+.close-sidebar-button:active {
+  font-size: 2.7rem;
+}

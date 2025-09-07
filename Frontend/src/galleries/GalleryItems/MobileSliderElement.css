@@ -1,0 +1,20 @@
+.sliderElement {
+  width: calc(100vw * 3);
+  height: 100vh;
+  display: flex;
+}
+
+.imageelemntWrapper {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageSlider-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  user-select: none;
+}

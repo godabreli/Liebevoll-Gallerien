@@ -1,0 +1,21 @@
+.edit-gallery-wrapper {
+  width: 65vw;
+  margin: 1.5rem auto;
+}
+
+.edit-gallery-buttons-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-gallery-items-wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .edit-gallery-wrapper {
+    width: 95vw;
+  }
+}

@@ -1,0 +1,15 @@
+.galleryLogin-card {
+  margin: 100px auto;
+  max-width: 400px;
+}
+
+.login-button-div {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .galleryLogin-card {
+    width: 95vw;
+    margin: 150px auto;
+  }
+}

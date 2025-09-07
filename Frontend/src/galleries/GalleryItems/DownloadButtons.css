@@ -1,0 +1,16 @@
+.download-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.buttonWrapper {
+  display: flex;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .download-buttons {
+    flex-direction: column;
+  }
+}

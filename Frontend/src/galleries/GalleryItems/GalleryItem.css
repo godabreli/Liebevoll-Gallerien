@@ -1,0 +1,81 @@
+.galleryItem {
+  overflow: hidden;
+  position: absolute;
+  background: rgb(240, 240, 240);
+  transition: padding 0.4s;
+}
+
+.galleryItem-downloadsActive {
+  padding: 17px;
+  border-radius: 10px;
+}
+
+.gallery-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.download-checkBox {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  top: 10px;
+  left: 10px;
+  height: 23px;
+  width: 23px;
+  background: rgba(255, 255, 255, 0.637);
+  border: none;
+  box-shadow: 0px 0px 3px 1px #787777;
+  border-radius: 100px;
+  font-size: 16px;
+  color: #686868;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.galleryItem:hover .download-checkBox {
+  opacity: 1;
+}
+
+.galleryItem:hover .gallery-image {
+  scale: 1.03;
+}
+
+.download-checkBox-activ {
+  background: rgb(77, 117, 238);
+  color: white;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.download-checkBox-downloadsActiv {
+  border: 2px solid rgb(255, 255, 255);
+  background: rgba(136, 136, 136, 0.685);
+  opacity: 1;
+  box-shadow: none;
+}
+
+.download-checkBox:hover {
+  background-color: rgb(121, 120, 119);
+  color: white;
+}
+
+.download-checkBox-activ:hover {
+  background: rgb(46, 70, 143);
+}
+
+.download-checkBox-downloadsActiv:hover {
+  background: rgb(97, 97, 97);
+}
+
+.galleryItem-downloadsActive .gallery-image {
+  border-radius: 8px;
+}
+
+.galleryItem-downloadsActive:hover .gallery-image {
+  scale: 1;
+}

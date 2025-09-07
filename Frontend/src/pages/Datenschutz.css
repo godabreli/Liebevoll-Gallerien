@@ -1,0 +1,18 @@
+.data {
+  font-size: 24px;
+}
+
+.data02 {
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.data03 {
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.datenschutz {
+  margin: 20px auto;
+  width: 70%;
+}

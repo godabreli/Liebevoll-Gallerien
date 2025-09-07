@@ -1,0 +1,37 @@
+.errorModal {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.545);
+}
+
+.card--errorModal {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  font-size: 1.3rem;
+}
+
+.message-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card--errorModal {
+    width: 85vw;
+  }
+}
