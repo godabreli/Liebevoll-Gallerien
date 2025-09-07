@@ -18,6 +18,7 @@ import ErrorModal from '../../shared/ui-elements/ErrorModal';
 import './MasonryRow.css';
 
 import { API_URL } from '../../util/globalURLS';
+import { IMAGE_URL } from '../../util/globalURLS';
 
 const MasonryRow = ({ galleryData, galleryWidth }) => {
   const gap = 5;
@@ -378,7 +379,7 @@ const MasonryRow = ({ galleryData, galleryWidth }) => {
                 galleryItemClassName={
                   downloads.length > 0 ? 'downloadsActive' : 'default'
                 }
-                src={API_URL + galleryData.images[image.index].path}
+                src={IMAGE_URL + galleryData.images[image.index].path}
                 alt={galleryData.images[image.index].altText || 'Wedding image'}
                 imageOnClick={
                   downloads.length > 0
