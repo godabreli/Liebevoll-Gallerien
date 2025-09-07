@@ -34,12 +34,12 @@ const port = process.env.PORT || 5000;
 
 mongoose
   .connect(
-    `mongodb+srv://godabreli:${process.env.MONGODB_PASSWORD}@cluster0.cxisa.mongodb.net/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority&appName=Cluster0`
+    `mongodb+srv://godabreli:${process.env.MONGODB_PASSWOR}@cluster0.cxisa.mongodb.net/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority&appName=Cluster0`
   )
   .then(() => {
     app.listen(port);
+    console.log('app Listening on port' + port);
   })
   .catch((err) => {
-    console.log(process.env.MONGO_PASSWOR);
     console.log(err);
   });
