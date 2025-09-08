@@ -1,5 +1,6 @@
 const { default: mongoose } = require('mongoose');
 const fs = require('fs');
+const path = require('path');
 const { imageSizeFromFile } = require('image-size/fromFile');
 
 const Gallery = require('../models/gallery');
@@ -35,9 +36,16 @@ exports.createGalery = async (req, res, next) => {
     const imageArray = await Promise.all(
       req.files.map(async (image, i) => {
         try {
-          const dimensions = await imageSizeFromFile(
-            `uploads/galleries/${req.body.name}/resized/${image.originalname}`
+          const filePath = path.join(
+            __dirname,
+            '..',
+            'uploads',
+            'galleries',
+            name,
+            'resized',
+            image.originalname
           );
+          const dimensions = await imageSizeFromFile(filePath);
           return {
             name: image.originalname,
             path: `galleries/${req.body.name}/resized/${image.originalname}`,

@@ -1,3 +1,4 @@
+const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
 
@@ -10,13 +11,22 @@ const MIME_TYPE_MAP = {
 const fileUpload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      const folder = `uploads/galleries/${req.body.name}`;
+      const folder = path.join(
+        __dirname,
+        '..',
+        'uploads',
+        'galleries',
+        req.body.name
+      );
+      console.log(folder);
+
       try {
         if (!fs.existsSync(folder)) {
-          fs.mkdirSync(folder);
+          fs.mkdirSync(folder, { recursive: true });
         }
       } catch (err) {
-        console.log(err);
+        console.log('Fehler beim Erstellen des Upload-Ordners: ', err);
+        return cb(err);
       }
       cb(null, folder);
     },
