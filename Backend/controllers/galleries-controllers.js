@@ -13,7 +13,14 @@ exports.checkGalleryName = (req, res, next) => {
 
   if (!galleryName) return next(new AppError('Gallery name is required', 400));
 
-  const folder = `uploads/galleries/${galleryName}`;
+  const folder = path.join(
+    __dirname,
+    '..',
+    'uploads',
+    'galleries',
+    galleryName
+  );
+
   if (fs.existsSync(folder))
     return next(new AppError('Gallery with this name already exists', 400));
 
