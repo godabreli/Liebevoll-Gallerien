@@ -23,8 +23,14 @@ exports.checkGalleryName = (req, res, next) => {
     galleryName
   );
 
-  if (fs.existsSync(folder))
-    return next(new AppError('Gallery with this name already exists', 400));
+  try {
+    if (fs.existsSync(folder))
+      return next(new AppError('Gallery with this name already exists', 400));
+  } catch (err) {
+    console.log('error by checking the name: ', err);
+  }
+
+  console.log('ordner exists!:', galleryName);
 
   res.status(200).json({ status: 'available' });
 };
