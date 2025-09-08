@@ -97,6 +97,8 @@ function CreateGallery() {
       console.log('error by checking the Name', err);
     }
 
+    console.log(checkedName);
+
     if (checkedName && checkedName.status === 'available') {
       try {
         const formData = new FormData();
