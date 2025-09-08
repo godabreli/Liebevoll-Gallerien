@@ -1,3 +1,21 @@
-export const API_URL = 'https://liebevollbelichtet.de/';
-export const IMAGE_URL = 'http://www.liebevollbelichtet.de:5000/';
+const env = 'dev';
+
+export const url = () => {
+  if (env === 'prod') {
+    return '/';
+  }
+
+  if (env === 'dev') {
+    return 'http://localhost:5000/';
+  }
+
+  if (env === 'dev-host') {
+    return 'http://192.168.1.112:5000/';
+  }
+};
+
+export const API_URL = url();
+
+// ('https://liebevollbelichtet.de/');
+
 // export const API_URL = 'http://192.168.1.112:5000/';
