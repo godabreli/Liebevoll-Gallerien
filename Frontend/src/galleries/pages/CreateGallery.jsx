@@ -77,6 +77,8 @@ function CreateGallery() {
       ? formState.inputs.name.value
       : freeGalleryName;
 
+    console.log(name);
+
     let checkedName;
 
     try {
@@ -92,7 +94,7 @@ function CreateGallery() {
         }
       );
     } catch (err) {
-      console.log(err);
+      console.log('error by checking the Name', err);
     }
 
     if (checkedName && checkedName.status === 'available') {
