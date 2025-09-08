@@ -31,13 +31,13 @@ router.get(
 
 router.post(
   '/checkGalleryName',
-  // authController.protectUser,
+  authController.protectUser,
   galleryController.checkGalleryName
 );
 
 router.post(
   '/createGallerie',
-  // authController.protectUser,
+  authController.protectUser,
   (req, res, next) => {
     console.log('Body before Multer:', req.body);
     next();
