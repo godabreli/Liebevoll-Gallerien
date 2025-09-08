@@ -31,7 +31,7 @@ router.get(
 
 router.post(
   '/checkGalleryName',
-  authController.protectUser,
+  // authController.protectUser,
   galleryController.checkGalleryName
 );
 
