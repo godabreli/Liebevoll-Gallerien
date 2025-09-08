@@ -11,8 +11,6 @@ const AppError = require('../utils/appError');
 exports.checkGalleryName = (req, res, next) => {
   const galleryName = req.body.name;
 
-  console.log(galleryName);
-
   if (!galleryName) return next(new AppError('Gallery name is required', 400));
 
   const folder = path.join(
@@ -29,8 +27,6 @@ exports.checkGalleryName = (req, res, next) => {
   } catch (err) {
     console.log('error by checking the name: ', err);
   }
-
-  console.log('ordner exists!:', galleryName);
 
   res.status(200).json({ status: 'available' });
 };

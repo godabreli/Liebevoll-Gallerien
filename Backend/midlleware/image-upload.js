@@ -11,6 +11,7 @@ const MIME_TYPE_MAP = {
 const fileUpload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
+      console.log(req.body.name);
       const folder = path.join(
         __dirname,
         '..',
