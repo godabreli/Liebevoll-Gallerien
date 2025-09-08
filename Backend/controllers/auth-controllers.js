@@ -136,6 +136,7 @@ exports.protectUser = (req, res, next) => {
       throw new AppError('Authentication Faild', 400);
     }
     req.userData = { userId: decodedToken.userId };
+    console.log('user Protect');
     next();
   } catch (err) {
     return next(err);
