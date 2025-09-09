@@ -110,7 +110,13 @@ exports.deleteGallery = async (req, res, next) => {
   if (!gallery)
     return next(new AppError('No gallerie found with that id', 400));
 
-  const folder = `uploads/galleries/${gallery.name}`;
+  const folder = path.join(
+    __dirname,
+    '..',
+    'uploads',
+    'galleries',
+    galleryName
+  );
 
   try {
     fs.rm(folder, { recursive: true, force: true }, (err) => {
@@ -216,9 +222,16 @@ exports.updateGallery = async (req, res, next) => {
         (el) => el.originalname === imageName
       );
       try {
-        const dimensions = await imageSizeFromFile(
-          `uploads/galleries/${req.body.name}/resized/${uploadedImage.originalname}`
+        const imageFile = path.join(
+          __dirname,
+          '..',
+          'uploads',
+          'galleries',
+          req.body.name,
+          'resized',
+          uploadedImage.originalname
         );
+        const dimensions = await imageSizeFromFile(imageFile);
         const newImage = {
           name: uploadedImage.originalname,
           path: `galleries/${req.body.name}/resized/${uploadedImage.originalname}`,
@@ -245,8 +258,21 @@ exports.updateGallery = async (req, res, next) => {
     return next(err);
   }
 
-  const resizedFolder = `uploads/galleries/${req.body.name}/resized`;
-  const originalSizeFolder = `uploads/galleries/${req.body.name}`;
+  const resizedFolder = path.join(
+    __dirname,
+    '..',
+    'uploads',
+    'galleries',
+    req.body.name,
+    'resized'
+  );
+  const originalSizeFolder = path.join(
+    __dirname,
+    '..',
+    'uploads',
+    'galleries',
+    req.body.name
+  );
 
   imagesToDelete.forEach((image) => {
     fs.unlink(`${resizedFolder}/${image.name}`, (err) => {
