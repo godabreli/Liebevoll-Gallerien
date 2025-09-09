@@ -38,10 +38,6 @@ router.post(
 router.post(
   '/createGallerie',
   authController.protectUser,
-  (req, res, next) => {
-    console.log('Body before Multer:', req.body);
-    next();
-  },
   fileUpload.array('images'),
   resizeImages,
   galleryController.createGalery

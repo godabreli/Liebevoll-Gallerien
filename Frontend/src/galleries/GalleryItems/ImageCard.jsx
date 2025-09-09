@@ -52,7 +52,7 @@ const ImageCard = ({
       {markedForDeletion === item && (
         <div className="delete-selected-image-wrapper">
           <p className="delete-image-warning">
-            {window.innerWidth > 768 ? 'Marked for deletion!' : 'DELETE image!'}
+            {window.innerWidth > 768 ? 'Marked for deletion!' : 'DELETE?'}
           </p>
           <Button
             size="very-small"

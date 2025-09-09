@@ -11,7 +11,6 @@ const MIME_TYPE_MAP = {
 const fileUpload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      console.log(req.body.name);
       const folder = path.join(
         __dirname,
         '..',
@@ -19,7 +18,6 @@ const fileUpload = multer({
         'galleries',
         req.body.name
       );
-      console.log(folder);
 
       try {
         if (!fs.existsSync(folder)) {

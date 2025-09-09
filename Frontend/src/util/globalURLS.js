@@ -1,4 +1,4 @@
-const env = 'prod';
+const env = 'dev-host';
 
 export const url = () => {
   if (env === 'prod') {
@@ -15,7 +15,3 @@ export const url = () => {
 };
 
 export const API_URL = url();
-
-// ('https://liebevollbelichtet.de/');
-
-// export const API_URL = 'http://192.168.1.112:5000/';
