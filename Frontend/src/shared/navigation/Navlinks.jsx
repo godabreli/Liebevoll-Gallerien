@@ -42,7 +42,7 @@ function Navlinks(props) {
         whileTap={{ scale: 0.95 }}
         onClick={props.onClick}
       >
-        <NavLink to="/my-galleries/Wedding-Gallery">GALERIE</NavLink>
+        <NavLink to="/my-gallery/Wedding-Gallery">GALERIE</NavLink>
       </motion.li>
       <motion.li
         variants={item}
@@ -64,7 +64,7 @@ function Navlinks(props) {
           whileTap={{ scale: 0.95 }}
           onClick={props.onClick}
         >
-          <NavLink to="/galleries">GALLERIES</NavLink>
+          <NavLink to="/my-galleries">GALLERIES</NavLink>
         </motion.li>
       )}
       {auth.userIsLoggedIn && (

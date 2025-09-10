@@ -66,7 +66,7 @@ function App() {
       <div className="spaceForFooter">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/my-galleries/:myGalleryName" element={<MyGallery />} />
+          <Route path="/my-gallery/:myGalleryName" element={<MyGallery />} />
           <Route path="/about-me" element={<AboutMe />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login-gallery" element={<GalleryLogin />} />
@@ -85,11 +85,11 @@ function App() {
             }
           />
           <Route
-            path="/galleries"
+            path="/my-galleries"
             element={userToken ? <Galleries /> : <Navigate to="/users/login" />}
           />
           <Route
-            path="/galleries/:galleryName"
+            path="/my-galleries/:galleryName"
             element={
               galleryToken ? <Gallery /> : <Navigate to="/login-gallery" />
             }

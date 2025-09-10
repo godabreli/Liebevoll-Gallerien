@@ -115,7 +115,7 @@ exports.deleteGallery = async (req, res, next) => {
     '..',
     'uploads',
     'galleries',
-    galleryName
+    gallery.name
   );
 
   try {

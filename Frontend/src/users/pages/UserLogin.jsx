@@ -50,7 +50,7 @@ function UserLogin() {
       if (responseData.status === 'success') {
         auth.userLogin(responseData.data.userId, responseData.data.token);
         setTimeout(() => {
-          navigate('/galleries');
+          navigate('/my-galleries');
         }, 100);
       }
     } catch (err) {

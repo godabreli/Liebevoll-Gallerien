@@ -125,7 +125,7 @@ function CreateGallery() {
         );
 
         if (responseData.status === 'success') {
-          navigate('/galleries');
+          navigate('/my-galleries');
         }
       } catch (err) {
         console.log(err);
