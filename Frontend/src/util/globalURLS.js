@@ -1,4 +1,4 @@
-const env = 'dev';
+const env = 'prod';
 
 export const url = () => {
   if (env === 'prod') {
