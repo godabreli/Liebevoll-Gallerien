@@ -85,16 +85,16 @@ function Galleries() {
     <>
       <Helmet>
         <meta
-          http-equiv="Content-Security-Policy"
+          httpEquiv="Content-Security-Policy"
           content="
-            default-src 'self';
-            script-src 'self';
-            style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-            img-src 'self' data:;
-            font-src 'self' https://fonts.gstatic.com;
-            connect-src 'self' https://www.liebevollbelichtet.de;
-            object-src 'none';
-          "
+          default-src 'self';
+          script-src 'self' 'unsafe-inline';
+          style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+          img-src 'self' data:;
+          font-src 'self' https://fonts.gstatic.com;
+          connect-src 'self' https://www.liebevollbelichtet.de;
+          object-src 'none';
+         "
         />
       </Helmet>
       <AnimatePresence>
