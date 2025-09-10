@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AnimatePresence } from 'motion/react';
+import { Helmet } from 'react-helmet';
 
 import { useHttpClient } from '../../shared/hooks/http-hook';
 import { AuthContext } from '../../../context/auth-context';
@@ -82,6 +83,20 @@ function Galleries() {
 
   return (
     <>
+      <Helmet>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="
+            default-src 'self';
+            script-src 'self';
+            style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+            img-src 'self' data:;
+            font-src 'self' https://fonts.gstatic.com;
+            connect-src 'self' https://www.liebevollbelichtet.de;
+            object-src 'none';
+          "
+        />
+      </Helmet>
       <AnimatePresence>
         {error && (
           <ErrorModal errorMessage={error} onClick={clearError}></ErrorModal>
