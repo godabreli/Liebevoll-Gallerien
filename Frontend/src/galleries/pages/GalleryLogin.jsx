@@ -44,7 +44,7 @@ function GalleryLogin() {
       if (responseData.status === 'success') {
         auth.galleryLogin(responseData.data.galleryId, responseData.data.token);
         setTimeout(() => {
-          navigate(`/galleries/${responseData.data.galleryName}`);
+          navigate(`/my-galleries/${responseData.data.galleryName}`);
         }, 100);
       }
     } catch (err) {
