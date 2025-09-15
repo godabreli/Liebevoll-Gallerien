@@ -8,6 +8,7 @@ import './ImageSlider.css';
 import MobileSliderElement from './MobileSliderElement';
 import DesctopSliderElement from './DesctopSliderElement';
 import DownloadButtonSVG from '../../SVG/DownloadButtonSVG';
+import XButtonSVG from '../../SVG/XButtonSVG';
 
 const ImageSlider = (props) => {
   const { galleryData, imageIndex } = props;
@@ -112,7 +113,15 @@ const ImageSlider = (props) => {
       }`}</div>
 
       {galleryData.downloadFunction && (
-        <div className="downloadButton" onClick={imageDownloadHandler}>
+        <div
+          className="downloadButton"
+          onClick={() => {
+            if (navigator.vibrate) {
+              navigator.vibrate(50); // 50ms Vibration
+            }
+            imageDownloadHandler();
+          }}
+        >
           <DownloadButtonSVG />
         </div>
       )}
@@ -121,7 +130,7 @@ const ImageSlider = (props) => {
         className="closeSliderButton"
         onClick={() => props.closeSlider(index)}
       >
-        +
+        <XButtonSVG />
       </div>
       <div className="errow-div errow-div-left" onClick={toTheLeft}>
         <div className="errow">&#65513;</div>

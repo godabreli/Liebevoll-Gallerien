@@ -37,8 +37,10 @@
   transition: 0.3s;
 }
 
-.galleryItem:hover .download-checkBox {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .galleryItem:hover .download-checkBox {
+    opacity: 1;
+  }
 }
 
 .galleryItem:hover .gallery-image {

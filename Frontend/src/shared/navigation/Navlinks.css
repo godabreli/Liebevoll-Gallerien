@@ -34,8 +34,8 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin-top: 230px;
+  width: 80%;
+  margin-top: 150px;
 }
 .sidebar-links li {
   margin-bottom: 0.7rem;

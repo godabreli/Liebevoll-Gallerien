@@ -23,27 +23,25 @@
   font-size: 1rem;
   position: absolute;
   z-index: 30;
-  top: 17px;
+  top: 12px;
   left: 20px;
 }
 
 .downloadButton {
-  font-family: 'Julius Sans One', sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 1rem;
+  -webkit-tap-highlight-color: transparent;
   position: absolute;
   display: flex;
-  width: 3rem;
-  height: 3rem;
+  width: 2.1rem;
+  height: 2.1rem;
   justify-content: center;
   align-items: center;
-  border-radius: 100px;
-  padding: 10px;
+  border-radius: 30px;
+  padding: 8px;
   z-index: 30;
-  top: 8px;
-  right: 80px;
+  top: 10px;
+  right: 70px;
   cursor: pointer;
+  user-select: none;
 }
 
 .downloadButton:hover {
@@ -51,26 +49,26 @@
 }
 
 .closeSliderButton {
-  font-family: 'Julius Sans One', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 4.5rem;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 8px;
   z-index: 30;
   top: 10px;
   right: 20px;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 100px;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 30px;
   background-color: rgba(0, 0, 0, 0);
-  color: rgba(255, 255, 255, 0.586);
   transition: 0.3s;
   cursor: pointer;
   user-select: none;
-  transform: rotate(45deg);
+}
+
+.closeSliderButton span {
+  transform: translateY(-10%);
+  display: inline-block;
 }
 
 .closeSliderButton:hover {
@@ -120,5 +118,13 @@
 @media (max-width: 768px) {
   .errow-div {
     display: none;
+  }
+
+  .downloadButton:hover {
+    background: none;
+  }
+
+  .downloadButton:active {
+    background: rgba(255, 255, 255, 0.175);
   }
 }
