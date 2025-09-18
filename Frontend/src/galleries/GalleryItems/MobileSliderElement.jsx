@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 import './MobileSliderElement.css';
@@ -127,6 +127,7 @@ const MobileSliderElement = (props) => {
 
   const resetSlider = useCallback(() => {
     accumulateDeltaRef.current = 0;
+    sliderRef.current.style.transition = 'none';
   }, []);
 
   /////////////////////////////////////////////////////////////////
@@ -156,7 +157,7 @@ const MobileSliderElement = (props) => {
         setTimeout(() => {
           toTheLeft();
           resetSlider();
-        }, 400);
+        }, 300);
       } else if (accumulateDeltaRef.current < -SWIPE_THRESHOLD) {
         slider.style.transform = `translateX(-66.66%)`;
         slider.style.transition = 'transform 0.3s ease';
@@ -167,10 +168,9 @@ const MobileSliderElement = (props) => {
         setTimeout(() => {
           toTheRight();
           resetSlider();
-        }, 500);
+        }, 300);
       } else {
         slider.style.transform = `translateX(${newTranslate}%)`;
-        slider.style.transition = 'none';
       }
     },
     [resetSlider, toTheLeft, toTheRight]
@@ -319,57 +319,16 @@ const MobileSliderElement = (props) => {
     slider.style.transition = 'none';
   }, [imageIndex]);
 
-  /////////////////////////////////////////////////
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-
-    if (slider) {
-      slider.addEventListener('touchmove', handleTouchMove, {
-        passive: false,
-      });
-      slider.addEventListener('touchend', handleTouchEnd);
-    }
-
-    return () => {
-      if (slider) {
-        slider.removeEventListener('touchmove', handleTouchMove);
-        slider.removeEventListener('touchend', handleTouchEnd);
-      }
-    };
-  }, [handleTouchMove, handleTouchEnd]);
-
-  useEffect(() => {
-    const preventZoom = (e) => {
-      if (e.touches && e.touches.length > 2) {
-        e.preventDefault();
-      }
-    };
-
-    const slider = sliderRef.current;
-
-    if (slider) {
-      slider.addEventListener('gesturestart', preventZoom, { passive: false });
-      slider.addEventListener('gesturechange', preventZoom, { passive: false });
-      slider.addEventListener('touchstart', preventZoom, { passive: false });
-    }
-
-    return () => {
-      if (slider) {
-        slider.removeEventListener('gesturestart', preventZoom);
-        slider.removeEventListener('gesturechange', preventZoom);
-        slider.removeEventListener('touchstart', preventZoom);
-      }
-    };
-  }, []);
-
   /////////////////////////////////////////////////////////
 
   return (
     <div
       ref={sliderRef}
       onTouchStart={(e) => handleTouchStart(e)}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
       className="sliderElement"
+      style={{ touchAction: 'none' }}
     >
       <div className="imageelemntWrapper">
         <div className="imageSlider-imageWrapper" style={prevImageStyle}>
