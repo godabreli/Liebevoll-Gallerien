@@ -1,5 +1,6 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Helmet } from 'react-helmet';
 
 import './MobileSliderElement.css';
 import { useCallback } from 'react';
@@ -321,76 +322,86 @@ const MobileSliderElement = (props) => {
 
   /////////////////////////////////////////////////////////
 
+  ///////////////////////////////////////////////////////////////////////////
+
   return (
-    <div
-      ref={sliderRef}
-      onTouchStart={(e) => handleTouchStart(e)}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      className="sliderElement"
-      style={{ touchAction: 'none' }}
-    >
-      <div className="imageelemntWrapper">
-        <div className="imageSlider-imageWrapper" style={prevImageStyle}>
-          <img
-            src={
-              API_URL +
-              galleryData.images[
-                imageIndex === 0
-                  ? galleryData.images.length - 1
-                  : imageIndex - 1
-              ].path
-            }
-            alt={
-              galleryData.images[
-                imageIndex === 0
-                  ? galleryData.images.length - 1
-                  : imageIndex - 1
-              ].altText || 'Wedding-photography'
-            }
-            className="imageSlider-image"
-          />
+    <>
+      <Helmet>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+        />
+      </Helmet>
+      <div
+        ref={sliderRef}
+        onTouchStart={(e) => handleTouchStart(e)}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        className="sliderElement"
+        style={{ touchAction: 'none' }}
+      >
+        <div className="imageelemntWrapper">
+          <div className="imageSlider-imageWrapper" style={prevImageStyle}>
+            <img
+              src={
+                API_URL +
+                galleryData.images[
+                  imageIndex === 0
+                    ? galleryData.images.length - 1
+                    : imageIndex - 1
+                ].path
+              }
+              alt={
+                galleryData.images[
+                  imageIndex === 0
+                    ? galleryData.images.length - 1
+                    : imageIndex - 1
+                ].altText || 'Wedding-photography'
+              }
+              className="imageSlider-image"
+            />
+          </div>
+        </div>
+        <div className="imageelemntWrapper" ref={imageWrapperRef}>
+          <div
+            // layoutId={hasAnimatedRef.current ? undefined : `image-${imageIndex}`}
+            // transition={{ type: 'spring', duration: 0.5 }}
+            className="imageSlider-imageWrapper"
+            style={currentImageStyle}
+          >
+            <img
+              src={API_URL + galleryData.images[imageIndex].path}
+              alt={
+                galleryData.images[imageIndex].altText || 'Wedding-photography'
+              }
+              className="imageSlider-image"
+            />
+          </div>
+        </div>
+        <div className="imageelemntWrapper">
+          <div className="imageSlider-imageWrapper" style={nextImageStyle}>
+            <img
+              src={
+                API_URL +
+                galleryData.images[
+                  imageIndex === galleryData.images.length - 1
+                    ? 0
+                    : imageIndex + 1
+                ].path
+              }
+              alt={
+                galleryData.images[
+                  imageIndex === galleryData.images.length - 1
+                    ? 0
+                    : imageIndex + 1
+                ].altText || 'Wedding-photography'
+              }
+              className="imageSlider-image"
+            />
+          </div>
         </div>
       </div>
-      <div className="imageelemntWrapper" ref={imageWrapperRef}>
-        <div
-          // layoutId={hasAnimatedRef.current ? undefined : `image-${imageIndex}`}
-          // transition={{ type: 'spring', duration: 0.5 }}
-          className="imageSlider-imageWrapper"
-          style={currentImageStyle}
-        >
-          <img
-            src={API_URL + galleryData.images[imageIndex].path}
-            alt={
-              galleryData.images[imageIndex].altText || 'Wedding-photography'
-            }
-            className="imageSlider-image"
-          />
-        </div>
-      </div>
-      <div className="imageelemntWrapper">
-        <div className="imageSlider-imageWrapper" style={nextImageStyle}>
-          <img
-            src={
-              API_URL +
-              galleryData.images[
-                imageIndex === galleryData.images.length - 1
-                  ? 0
-                  : imageIndex + 1
-              ].path
-            }
-            alt={
-              galleryData.images[
-                imageIndex === galleryData.images.length - 1
-                  ? 0
-                  : imageIndex + 1
-              ].altText || 'Wedding-photography'
-            }
-            className="imageSlider-image"
-          />
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

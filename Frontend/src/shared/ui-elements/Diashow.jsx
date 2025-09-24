@@ -22,7 +22,7 @@ export const Diashow = ({ images }) => {
           }`}
           key={i}
           src={image}
-          alt="Diashow image"
+          alt="Hochzeitsfotograf Düsseldorf fotografiert Brautpaar"
         />
       ))}
     </div>

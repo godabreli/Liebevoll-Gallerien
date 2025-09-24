@@ -295,14 +295,48 @@ const MasonryRow = ({ galleryData, galleryWidth }) => {
     downloadHandler(allImagesPaths);
   };
 
+  //////////////////////////////////////////////////////
+
+  const openFullscreen = async () => {
+    const el = document.documentElement;
+    if (el.requestFullscreen) {
+      await el.requestFullscreen();
+    } else if (el.webkitRequestFullscreen) {
+      // Safari
+      await el.webkitRequestFullscreen();
+    }
+  };
+
+  const exitFullscreen = () => {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      // Safari
+      document.webkitExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.msExitFullscreen) {
+      // IE11
+      document.msExitFullscreen();
+    }
+  };
+
+  ////////////////////////////////////////////////////////////
+
   const startSliderHandler = useCallback((index) => {
     setImageIndex(index);
     setOpenSlider(true);
+
+    if (window.innerWidth < 768) {
+      openFullscreen();
+    }
   }, []);
 
   const closeSliderHandler = (index) => {
     window.scrollTo(0, imagesTopPositions[index]);
     setOpenSlider(false);
+    exitFullscreen();
   };
 
   useEffect(() => {
@@ -337,19 +371,19 @@ const MasonryRow = ({ galleryData, galleryWidth }) => {
       {error && (
         <ErrorModal errorMessage={error} onClick={() => setError(null)} />
       )}
-      <AnimatePresence>
-        {openSlider && (
-          <ImageSlider
-            galleryData={galleryData}
-            imageIndex={imageIndex}
-            imagesTopPositions={imagesTopPositions}
-            closeSlider={closeSliderHandler}
-            galleryRowHeight={galleryRowHeightRef.current}
-          />
-        )}
-      </AnimatePresence>
 
       <div className="masonryRow" style={{ width: galleryWidth }}>
+        <AnimatePresence>
+          {openSlider && (
+            <ImageSlider
+              galleryData={galleryData}
+              imageIndex={imageIndex}
+              imagesTopPositions={imagesTopPositions}
+              closeSlider={closeSliderHandler}
+              galleryRowHeight={galleryRowHeightRef.current}
+            />
+          )}
+        </AnimatePresence>
         {galleryData.downloadFunction && (
           <DownloadButtons
             downloadsArrey={downloads}

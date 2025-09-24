@@ -79,7 +79,7 @@ function Kontakt() {
           name="description"
           content="Kontaktieren Sie mich heute, um Ihre Hochzeit in ein Kunstwerk aus wundershönen Erinerungen zu verwandeln.  "
         />
-        <link rel="canonical" href="https://liebevollbelichtet.de/Kontakt" />
+        <link rel="canonical" href="https://liebevollbelichtet.de/contact" />
       </Helmet>
       <div className="contact-wrapper">
         {emailSendt && (

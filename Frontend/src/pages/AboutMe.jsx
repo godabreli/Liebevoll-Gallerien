@@ -14,7 +14,7 @@ function AboutMe() {
           name="description"
           content="Hochzeitsfotograf mit Leidenschaft. Hochzeitsfotos die Ihre schönsten Momente für die Ewigkeit festhalten.  "
         />
-        <link rel="canonical" href="https://liebevollbelichtet.de/Uebermich" />
+        <link rel="canonical" href="https://liebevollbelichtet.de/about-me" />
       </Helmet>
       <div className="wrapper">
         <div className="text">

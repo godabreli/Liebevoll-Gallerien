@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react';
+import React, { useEffect, useState, useContext, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { AuthContext } from '../../../context/auth-context';
 
@@ -38,8 +38,9 @@ const ImageSlider = (props) => {
 
   const toTheLeft = () => {
     setIndex((prev) => (prev === 0 ? galleryData.images.length - 1 : prev - 1));
-    //////////////////////////////////////////////////
   };
+
+  //////////////////////////////////////////////////
 
   const imageDownloadHandler = async () => {
     const imagePath = `uploads/galleries/${galleryData.name}/${galleryData.images[index].name}`;

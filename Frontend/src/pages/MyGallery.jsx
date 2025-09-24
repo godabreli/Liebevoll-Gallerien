@@ -16,7 +16,10 @@ function MyGallery() {
           name="description"
           content="Eine Galerie von unvergeslichen Momenten. Hochzeitsfotos die begeistern.  "
         />
-        <link rel="canonical" href="https://liebevollbelichtet.de/Galerie" />
+        <link
+          rel="canonical"
+          href="https://liebevollbelichtet.de/my-gallery/Wedding-Gallery"
+        />
       </Helmet>
       <div className="myGallery-wraper">
         <Gallery />
