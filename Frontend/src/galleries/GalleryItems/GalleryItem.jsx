@@ -50,6 +50,7 @@ const GalleryItem = (props) => {
         className="gallery-image"
         src={props.src}
         alt={props.alt}
+        loading="lazy"
         onClick={onClickHandler}
         onTouchStart={props.downloadFunction ? touchStartHandler : null}
         onTouchEnd={touchEndHandler}

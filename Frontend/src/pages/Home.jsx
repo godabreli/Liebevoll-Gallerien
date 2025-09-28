@@ -5,29 +5,29 @@ import './Home.css';
 import { Diashow } from '../shared/ui-elements/Diashow';
 
 const diashow01Images = [
-  'diashowImages/diashow01-01.jpg',
-  'diashowImages/diashow01-02.jpg',
-  'diashowImages/diashow01-03.jpg',
-  'diashowImages/diashow01-04.jpg',
-  'diashowImages/diashow01-05.jpg',
+  'diashowImages/brautpaar-hochzeit-muenset-01-01.jpg',
+  'diashowImages/brautpaar-hochzeit-wupertal-01-02.jpg',
+  'diashowImages/brautpaar-hochzeit-duesseldorf-medienhafen-01-03.jpg',
+  'diashowImages/brautpaar-hochzeit-wupertal-01-04.jpg',
+  'diashowImages/brautpaar-hochzeit-muenset-01-05.jpg',
 ];
 
 const diashow02Images = [
-  'diashowImages/diashow02-01.jpg',
-  'diashowImages/diashow02-02.jpg',
-  'diashowImages/diashow02-03.jpg',
+  'diashowImages/chuppa-hochzeit-wupertal-02-01.jpg',
+  'diashowImages/brautschuhe-hochzeit-wupertal-02-02.jpg',
+  'diashowImages/brautkleid-hochzeit-wupertal-02-03.jpg',
 ];
 
 const diashow03Images = [
-  'diashowImages/diashow03-01.jpg',
-  'diashowImages/diashow03-02.jpg',
-  'diashowImages/diashow03-03.jpg',
+  'diashowImages/brautpaar-hochzeit-muenset-03-01.jpg',
+  'diashowImages/brautpaar-hochzeit-muenset-03-02.jpg',
+  'diashowImages/brautpaar-hochzeit-muenset-03-03.jpg',
 ];
 
 const diashow04Images = [
-  'diashowImages/diashow04-01.jpg',
-  'diashowImages/diashow04-02.jpg',
-  'diashowImages/diashow04-03.jpg',
+  'diashowImages/brautpaar-hochzeit-koeln-kirche-04-01.jpg',
+  'diashowImages/brautpaar-hochzeit-koeln-kirche-04-02.jpg',
+  'diashowImages/brautpaar-hochzeit-koeln-kirche-04-03.jpg',
 ];
 
 const Home = () => {
@@ -61,18 +61,40 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Liebevoll Belichtet | Hochzeitsfotograf Düsseldorf</title>
+        <title>Hochzeitsfotograf Düsseldorf & NRW – Liebevoll Belichtet</title>
         <meta
           name="description"
-          content="Hochzeitsfotograf aus Düsseldorf. Kontaktieren sie mich, um Ihre Hochzeit in ein wahres Kunstwerk aus Bildern zu verwandeln."
-        />
-        <meta
-          name="keywords"
-          content="Hochzeitsfotograf, Hochzeitsfotograf Düsseldorf, Hochzeitsfotograf NRW, Hochzeitsfotografie"
+          content="Hochzeitsfotograf Düsseldorf – emotionale, unvergessliche Hochzeitsfotos voller Liebe & Magie. Vertrauen Sie auf 20 Jahre Erfahrung in NRW."
         />
         <link rel="canonical" href="https://liebevollbelichtet.de/" />
+
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Liebevoll Belichtet",
+              "image": "https://liebevollbelichtet.de/logo.jpg",
+              "url": "https://liebevollbelichtet.de",
+              "telephone": "+49-179-4839729",
+              "address": {
+                "@type": "Engerstr. 25",
+                "postalCode": "40235",
+                "addressLocality": "Düsseldorf",
+                "addressRegion": "NRW",
+                "addressCountry": "DE"
+              },
+              "sameAs": [
+                "https://www.instagram.com/liebevollbelichtet/"
+              ]
+            }
+          `}
+        </script>
       </Helmet>
       <div className="home-wrapper">
+        <h1 className="visually-hidden">
+          Hochzeitsfotograf Düsseldorf & NRW – Liebevoll Belichtet
+        </h1>
         {width && (
           <div className="home-components-wrapper" style={{ width: width }}>
             <div
