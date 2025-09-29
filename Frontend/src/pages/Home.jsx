@@ -76,7 +76,6 @@ const Home = () => {
               "name": "Liebevoll Belichtet",
               "image": "https://liebevollbelichtet.de/logo.jpg",
               "url": "https://liebevollbelichtet.de",
-              "telephone": "+49-179-4839729",
               "address": {
                 "@type": "Engerstr. 25",
                 "postalCode": "40235",
