@@ -167,8 +167,13 @@ exports.checkIfProtected = async (req, res, next) => {
   if (!gallery)
     return next(new AppError('No gallery fount with that name', 400));
 
-  if (gallery.isProtected)
-    return next(new AppError('You do not have access to this gallery', 400));
+  if (gallery.isProtected) {
+    return res.status(200).json({
+      status: 'fail',
+      message: 'You do not have access to this gallery',
+      data: { isProtected: true },
+    });
+  }
 
   req.galleryData = { galleryId: gallery.id };
 

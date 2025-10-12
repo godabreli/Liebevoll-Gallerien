@@ -1,0 +1,130 @@
+.imageSlider {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.counter-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.586);
+  width: auto;
+  height: auto;
+  padding: 5px;
+  border-radius: 8px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  position: absolute;
+  z-index: 30;
+  top: 12px;
+  left: 20px;
+}
+
+.downloadButton {
+  -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  display: flex;
+  width: 2.1rem;
+  height: 2.1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 8px;
+  z-index: 30;
+  top: 10px;
+  right: 70px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.downloadButton:hover {
+  background: rgba(255, 255, 255, 0.175);
+}
+
+.closeSliderButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  z-index: 30;
+  top: 10px;
+  right: 20px;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.closeSliderButton span {
+  transform: translateY(-10%);
+  display: inline-block;
+}
+
+.closeSliderButton:hover {
+  background: rgba(255, 255, 255, 0.175);
+}
+
+.errow-div {
+  display: flex;
+  height: 100vh;
+  width: 9rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.errow-div-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 25;
+}
+.errow-div-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 25;
+}
+
+.errow {
+  color: rgba(255, 255, 255, 0.586);
+  font-size: 2.7rem;
+  font-weight: 100;
+  border-radius: 100px;
+  transition: 0.3s;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.errow:hover {
+  background: rgba(255, 255, 255, 0.175);
+}
+
+@media (max-width: 768px) {
+  .errow-div {
+    display: none;
+  }
+
+  .downloadButton:hover {
+    background: none;
+  }
+
+  .downloadButton:active {
+    background: rgba(255, 255, 255, 0.175);
+  }
+}

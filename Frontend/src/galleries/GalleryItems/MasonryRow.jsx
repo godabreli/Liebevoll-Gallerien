@@ -336,8 +336,12 @@ const MasonryRow = ({ galleryData, galleryWidth }) => {
   const closeSliderHandler = (index) => {
     window.scrollTo(0, imagesTopPositions[index]);
     setOpenSlider(false);
-    exitFullscreen();
+    if (document.fullscreenElement) {
+      exitFullscreen();
+    }
   };
+
+  /////////////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (activeHttpRequests.current) {

@@ -20,7 +20,7 @@ exports.loginGallery = async (req, res, next) => {
       !gallery ||
       !(await gallery.checkPassword(password, gallery.password))
     ) {
-      return next(new AppError('Incorect login or password', 401));
+      return next(new AppError('Incorect login or password!', 401));
     }
 
     const token = jwt.sign(

@@ -1,0 +1,59 @@
+.embedGalleryItemDiv {
+  background: rgb(236, 235, 235);
+  padding: 0px;
+  border-radius: 0px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.embedGalleryItemDiv:hover img {
+  transform: scale(1.015);
+}
+
+.embedGalleryItemDiv-downloadsActive {
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.embedGalleryItemDiv-downloadsActive:hover img {
+  transform: none;
+}
+
+.embedDownloadCheckBox {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 20px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(128, 128, 128);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.2s ease-in;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .embedGalleryItemDiv:hover .embedDownloadCheckBox {
+    opacity: 1;
+  }
+}
+
+.embedDownloadCheckBox:hover {
+  transform: scale(1.1);
+}
+
+.embedDownloadCheckBox-downloadsActiv {
+  opacity: 1;
+  border: 3px solid white;
+  background: rgba(128, 128, 128, 0.682);
+}
+
+.embedDownloadCheckBox-activ {
+  opacity: 1;
+  background: rgb(77, 117, 238);
+}

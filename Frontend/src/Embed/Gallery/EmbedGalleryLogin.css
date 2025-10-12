@@ -1,0 +1,65 @@
+.EmbedGalleryLoginWrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.embedGalleryLoginCard {
+  width: 40%;
+  height: fit-content;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+  margin-top: 60px;
+}
+
+.embedGalleryLoginForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.embedGalleryLoginForm label {
+  font-size: 1.3rem;
+  margin-bottom: 3px;
+}
+
+.embedGalleryLoginInput {
+  height: 2rem;
+  font-size: 1rem;
+  padding: 3px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+.embedGalleryLoginInput:focus {
+  background-color: rgb(241, 244, 246);
+  outline: none;
+}
+
+.embedGalleryLoginInput--red {
+  border: 1px solid red;
+}
+
+.embedGalleryLoginForm button {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.embedGalleryLoginForm button:hover {
+  background: rgb(241, 244, 246);
+}
+
+.embedGalleryLoginForm button:hover:disabled {
+  cursor: not-allowed;
+}
