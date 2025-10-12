@@ -131,7 +131,7 @@ const ImageSlider = (props) => {
         className="closeSliderButton"
         onClick={() => props.closeSlider(index)}
       >
-        <XButtonSVG />
+        <XButtonSVG color="rgba(255, 255, 255, 0.586)" />
       </div>
       <div className="errow-div errow-div-left" onClick={toTheLeft}>
         <div className="errow">&#65513;</div>
