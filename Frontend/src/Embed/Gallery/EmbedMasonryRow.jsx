@@ -328,7 +328,9 @@ const EmbedMasonryRow = (props) => {
                   top: image.topPosition,
                   left: image.leftPosition,
                 }}
-                imageSrc={API_URL + galleryData.images[image.index].path}
+                imageSrc={`https://www.liebevollbelichtet.de/${
+                  galleryData.images[image.index].path
+                }`}
                 alt={
                   galleryData.images[image.index].altText ||
                   'fotograf fotografiert modelle'
