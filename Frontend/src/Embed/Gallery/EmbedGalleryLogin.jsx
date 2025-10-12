@@ -13,14 +13,17 @@ const EmbedGalleryLogin = (props) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${API_URL}api/galleries/login`, {
-        method: 'POST',
-        body: JSON.stringify({
-          name: galleryName,
-          password: galleryPassword,
-        }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      const res = await fetch(
+        'https://www.liebevollbelichtet.de/api/galleries/login',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            name: galleryName,
+            password: galleryPassword,
+          }),
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
 
       const data = await res.json();
 
