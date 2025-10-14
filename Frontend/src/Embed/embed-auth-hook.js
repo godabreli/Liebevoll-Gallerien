@@ -19,7 +19,7 @@ export const useEmbedAuthHook = () => {
         galTokenExpirationDate || Date.now() + 1000 * 60 * 60 * 12;
       setGalleryTokenExpirationDate(tokenExpirationDate);
       localStorage.setItem(
-        'galleryData',
+        'embedGalleryData',
         JSON.stringify({
           galleryId: galId,
           galleryToken: galToken,
@@ -36,7 +36,7 @@ export const useEmbedAuthHook = () => {
     setGalleryToken(null);
     setGalleryIsLoggedIn(false);
     setGalleryTokenExpirationDate(null);
-    localStorage.removeItem('galleryData');
+    localStorage.removeItem('embedGalleryData');
     setIsAuthenticating(false);
   }, []);
 
@@ -49,7 +49,13 @@ export const useEmbedAuthHook = () => {
   }, [galleryToken, galleryTokenExpirationDate, galleryLogout]);
 
   useEffect(() => {
-    const storedGalleryData = JSON.parse(localStorage.getItem('galleryData'));
+    const storedGalleryData = JSON.parse(
+      localStorage.getItem('embedGalleryData')
+    );
+
+    if (storedGalleryData && storedGalleryData.expiration < Date.now()) {
+      galleryLogout();
+    }
 
     if (!storedGalleryData) {
       setIsAuthenticating(false);
@@ -66,7 +72,7 @@ export const useEmbedAuthHook = () => {
         storedGalleryData.expiration
       );
     }
-  }, [galleryLogin]);
+  }, [galleryLogin, galleryLogout]);
 
   return {
     galleryToken,
