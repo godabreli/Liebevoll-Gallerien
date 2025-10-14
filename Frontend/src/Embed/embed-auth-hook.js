@@ -53,10 +53,6 @@ export const useEmbedAuthHook = () => {
       localStorage.getItem('embedGalleryData')
     );
 
-    if (storedGalleryData && storedGalleryData.expiration < Date.now()) {
-      galleryLogout();
-    }
-
     if (!storedGalleryData) {
       setIsAuthenticating(false);
     }
