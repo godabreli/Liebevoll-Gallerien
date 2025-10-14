@@ -39,7 +39,7 @@ const EmbedGallery = (props) => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `https://www.liebevollbelichtet.de/api/galleries/my-galleries/${galleryName}`
+          `https://liebevollbelichtet.de/api/galleries/my-galleries/${galleryName}`
         );
 
         if (!res.ok) {
@@ -57,7 +57,7 @@ const EmbedGallery = (props) => {
         if (data.data.isProtected) {
           if (galleryIsLoggedIn) {
             const res = await fetch(
-              `https://www.liebevollbelichtet.de/api/galleries/get-gallery/${galleryName}`,
+              `https://liebevollbelichtet.de/api/galleries/get-gallery/${galleryName}`,
               {
                 method: 'GET',
                 headers: { Authorization: 'Bearer ' + galleryToken },
@@ -140,7 +140,7 @@ const EmbedGallery = (props) => {
       setIsLoading(true);
 
       const response = await fetch(
-        'https://www.liebevollbelichtet.de/api/galleries/downloads/download-images',
+        'https://liebevollbelichtet.de/api/galleries/downloads/download-images',
         {
           method: 'POST',
           headers: {
@@ -189,7 +189,7 @@ const EmbedGallery = (props) => {
 
     try {
       const response = await fetch(
-        'https://www.liebevollbelichtet.de/api/galleries/downloads/download-one-image',
+        'https://liebevollbelichtet.de/api/galleries/downloads/download-one-image',
         {
           method: 'POST',
           body: JSON.stringify({

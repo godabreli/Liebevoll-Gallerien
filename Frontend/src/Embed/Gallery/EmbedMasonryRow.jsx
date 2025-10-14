@@ -328,7 +328,7 @@ const EmbedMasonryRow = (props) => {
                   top: image.topPosition,
                   left: image.leftPosition,
                 }}
-                imageSrc={`https://www.liebevollbelichtet.de/${
+                imageSrc={`https://liebevollbelichtet.de/${
                   galleryData.images[image.index].path
                 }`}
                 alt={

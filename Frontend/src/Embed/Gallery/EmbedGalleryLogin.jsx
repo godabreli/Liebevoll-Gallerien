@@ -14,7 +14,7 @@ const EmbedGalleryLogin = (props) => {
 
     try {
       const res = await fetch(
-        'https://www.liebevollbelichtet.de/api/galleries/login',
+        'https://liebevollbelichtet.de/api/galleries/login',
         {
           method: 'POST',
           body: JSON.stringify({
