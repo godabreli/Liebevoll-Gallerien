@@ -326,9 +326,8 @@ const EmbedGallery = (props) => {
         </div>
       )}
 
-      {galleryData && galleryData.isProtected && (
-        <EmbedGalleryLogin logIn={galleryLogin} />
-      )}
+      <EmbedGalleryLogin logIn={galleryLogin} />
+
       <DownloadsContext.Provider
         value={{
           downloads,
