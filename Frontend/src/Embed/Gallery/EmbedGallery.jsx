@@ -48,6 +48,8 @@ const EmbedGallery = (props) => {
 
         const data = await res.json();
 
+        console.log(data);
+
         if (data.data.images) {
           setGalleryData(data.data);
           setIsLoading(false);
