@@ -30,6 +30,7 @@ const EmbedGallery = (props) => {
   const [animateDropDownMenue, setAnimateDropDownMenue] = useState(true);
   const [downloads, setDownloads] = useState([]);
   const [checkBoxIsActive, setCheckBoxIsActive] = useState({});
+  const [showLogin, setShowLogin] = useState(false);
 
   const galleryWraperRef = useRef(null);
 
@@ -74,6 +75,7 @@ const EmbedGallery = (props) => {
 
           if (!galleryIsLoggedIn) {
             setIsLoading(false);
+            setShowLogin(true);
           }
         }
       } catch (err) {
@@ -326,7 +328,9 @@ const EmbedGallery = (props) => {
         </div>
       )}
 
-      {!galleryIsLoggedIn && <EmbedGalleryLogin logIn={galleryLogin} />}
+      {!galleryIsLoggedIn && showLogin && (
+        <EmbedGalleryLogin logIn={galleryLogin} />
+      )}
 
       <DownloadsContext.Provider
         value={{
