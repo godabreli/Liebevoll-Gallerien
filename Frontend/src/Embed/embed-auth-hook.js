@@ -16,7 +16,7 @@ export const useEmbedAuthHook = () => {
       setGalleryToken(galToken);
       setGalleryIsLoggedIn(true);
       const tokenExpirationDate =
-        galTokenExpirationDate || Date.now() + 1000 * 60 * 60 * 12;
+        galTokenExpirationDate || Date.now() + 1000 * 60;
       setGalleryTokenExpirationDate(tokenExpirationDate);
       localStorage.setItem(
         'galleryData',

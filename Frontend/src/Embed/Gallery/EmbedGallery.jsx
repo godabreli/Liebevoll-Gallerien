@@ -36,9 +36,8 @@ const EmbedGallery = (props) => {
 
   useEffect(() => {
     console.log('LALALALALALA');
-    if (isAuthenticating) return;
+
     const fetchData = async () => {
-      console.log(galleryName);
       try {
         const res = await fetch(
           `https://liebevollbelichtet.de/api/galleries/my-galleries/${galleryName}`
@@ -49,8 +48,6 @@ const EmbedGallery = (props) => {
         }
 
         const data = await res.json();
-
-        console.log(data);
 
         if (data.data.images) {
           setGalleryData(data.data);
