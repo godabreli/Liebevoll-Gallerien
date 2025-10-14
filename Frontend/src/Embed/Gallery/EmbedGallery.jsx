@@ -26,7 +26,6 @@ const EmbedGallery = (props) => {
   const [galleryWidth, setGalleryWidth] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [schowScrollToTop, setShowScrollToTop] = useState(false);
-  const [showLogIn, setShowLogIn] = useState(false);
   const [showDropdownMenue, setShowDropdownMenue] = useState(false);
   const [animateDropDownMenue, setAnimateDropDownMenue] = useState(true);
   const [downloads, setDownloads] = useState([]);
@@ -75,7 +74,6 @@ const EmbedGallery = (props) => {
 
           if (!galleryIsLoggedIn) {
             setIsLoading(false);
-            setShowLogIn(true);
           }
         }
       } catch (err) {
@@ -84,16 +82,6 @@ const EmbedGallery = (props) => {
     };
     fetchData();
   }, [galleryName, galleryIsLoggedIn, galleryToken, isAuthenticating]);
-
-  ////////////////////////////////////////////////////////////////////
-
-  useEffect(() => {
-    if (galleryIsLoggedIn && !isAuthenticating) {
-      console.log('setSHowLogin false');
-      // Wenn Login fertig -> sofort refetch
-      setShowLogIn(false);
-    }
-  }, [galleryIsLoggedIn, isAuthenticating]);
 
   ///////////////////////////////////////////////////////////////////////
 
