@@ -35,8 +35,6 @@ const EmbedGallery = (props) => {
   const galleryWraperRef = useRef(null);
 
   useEffect(() => {
-    console.log('LALALALALALA');
-
     const fetchData = async () => {
       try {
         const res = await fetch(
@@ -91,6 +89,7 @@ const EmbedGallery = (props) => {
 
   useEffect(() => {
     if (galleryIsLoggedIn && !isAuthenticating) {
+      console.log('setSHowLogin false');
       // Wenn Login fertig -> sofort refetch
       setShowLogIn(false);
     }
