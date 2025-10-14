@@ -34,8 +34,6 @@ import EmbedMassonryRowStyle from './Embed/Gallery/EmbedMasonryRow.css?inline';
 
   const galleryName = scriptTag.dataset.galleryName || 'default';
 
-  console.log(galleryName);
-
   const galleryRoot = document.createElement('div');
   container.appendChild(galleryRoot);
 
