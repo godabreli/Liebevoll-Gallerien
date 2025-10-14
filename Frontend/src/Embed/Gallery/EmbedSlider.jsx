@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { motion } from 'motion/react';
 
-import DesctopSliderElement from '../../galleries/GalleryItems/DesctopSliderElement';
+import EmbedDesctopSliderElement from './EmbedDesctopSliderElement';
 import MobileSliderElement from '../../galleries/GalleryItems/MobileSliderElement';
 
 import XButtonSVG from '../../SVG/XButtonSVG';
@@ -46,7 +46,10 @@ const EmbedSlider = (props) => {
           imageIndex={index}
         />
       ) : (
-        <DesctopSliderElement galleryData={galleryData} imageIndex={index} />
+        <EmbedDesctopSliderElement
+          galleryData={galleryData}
+          imageIndex={index}
+        />
       )}
       <div className="counter-div">{`${index + 1} / ${
         galleryData.images.length

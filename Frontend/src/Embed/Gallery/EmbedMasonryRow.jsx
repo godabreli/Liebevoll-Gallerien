@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 import { AnimatePresence } from 'motion/react';
 
-import { API_URL } from '../../util/globalURLS';
 import { DownloadsContext } from './downloads-context';
 
 import EmbedGalleryItem from './EmbedGalleryItem';
