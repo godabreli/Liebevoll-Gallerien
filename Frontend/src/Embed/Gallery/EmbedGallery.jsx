@@ -35,6 +35,7 @@ const EmbedGallery = (props) => {
   const galleryWraperRef = useRef(null);
 
   useEffect(() => {
+    console.log('LALALALALALA');
     if (isAuthenticating) return;
     const fetchData = async () => {
       console.log(galleryName);
