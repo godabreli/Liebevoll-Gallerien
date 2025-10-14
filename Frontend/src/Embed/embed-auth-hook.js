@@ -12,7 +12,6 @@ export const useEmbedAuthHook = () => {
 
   const galleryLogin = useCallback(
     (galId, galToken, galTokenExpirationDate) => {
-      console.log('From HOOK');
       setGalleryId(galId);
       setGalleryToken(galToken);
       setGalleryIsLoggedIn(true);
