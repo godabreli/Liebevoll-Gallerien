@@ -37,7 +37,6 @@ const EmbedGallery = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(showGallery);
       try {
         const res = await fetch(
           `https://liebevollbelichtet.de/api/galleries/my-galleries/${galleryName}`
@@ -48,12 +47,6 @@ const EmbedGallery = (props) => {
         }
 
         const data = await res.json();
-
-        if (data.data.images) {
-          setGalleryData(data.data);
-          setIsLoading(false);
-          return;
-        }
 
         if (data.data.isProtected) {
           if (galleryIsLoggedIn) {
@@ -73,13 +66,14 @@ const EmbedGallery = (props) => {
             setGalleryData(data.data);
             setIsLoading(false);
             return;
-          }
-
-          if (!galleryIsLoggedIn) {
+          } else {
             setIsLoading(false);
             setShowLogin(true);
             setShowGallery(false);
           }
+        } else {
+          setGalleryData(data.data);
+          setIsLoading(false);
         }
       } catch (err) {
         console.log(err);
