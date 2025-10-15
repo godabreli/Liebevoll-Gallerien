@@ -5,8 +5,6 @@ import EmbedGallery from './Embed/Gallery/EmbedGallery';
 import embedGalleryStyles from './Embed/Gallery/EmbedGallery.css?inline';
 import embedGalleryItemStyles from './Embed/Gallery/EmbedGalleryItem.css?inline';
 import embedSliderStyles from './Embed/Gallery/EmbedSlider.css?inline';
-import mobileSliderElementStyles from './galleries/GalleryItems/MobileSliderElement.css?inline';
-import desctopSliderElementStyles from './galleries/GalleryItems/DesctopSliderElement.css?inline';
 import EmbedGalleryLoginStyles from './Embed/Gallery/EmbedGalleryLogin.css?inline';
 import EmbedMassonryRowStyle from './Embed/Gallery/EmbedMasonryRow.css?inline';
 import EmbedDesctopSliderElementStyle from './Embed/Gallery/EmbedDesctopSliderElement.css?inline';
