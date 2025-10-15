@@ -71,7 +71,7 @@ const EmbedGallery = (props) => {
             setShowLogin(true);
             setShowGallery(false);
           }
-        } else {
+        } else if (!isAuthenticating && galleryData?.images) {
           setGalleryData(data.data);
           setShowGallery(true);
           setShowLogin(false);
