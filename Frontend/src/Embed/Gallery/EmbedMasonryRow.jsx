@@ -341,6 +341,7 @@ const EmbedMasonryRow = (props) => {
                 }
                 checkBoxOnClick={() => downloadCheckBoxHandler(image.index)}
                 downloadFunction={galleryData.downloadFunction}
+                imageLongPress={() => downloadCheckBoxHandler(image.index)}
               />
             ))
           )}
