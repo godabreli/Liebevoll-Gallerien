@@ -49,7 +49,7 @@ const EmbedGallery = (props) => {
         const data = await res.json();
 
         if (data.data.isProtected) {
-          if (galleryIsLoggedIn) {
+          if (!isAuthenticating && galleryIsLoggedIn) {
             const res = await fetch(
               `https://liebevollbelichtet.de/api/galleries/get-gallery/${galleryName}`,
               {
