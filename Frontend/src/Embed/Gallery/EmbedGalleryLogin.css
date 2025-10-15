@@ -63,3 +63,9 @@
 .embedGalleryLoginForm button:hover:disabled {
   cursor: not-allowed;
 }
+
+@media (max-width: 760px) {
+  .embedGalleryLoginCard {
+    width: 95%;
+  }
+}
