@@ -64,17 +64,18 @@ const EmbedGallery = (props) => {
             const data = await res.json();
 
             setGalleryData(data.data);
+            console.log('set DATA Protected');
             setShowGallery(true);
             setShowLogin(false);
             setIsLoading(false);
-            return;
           } else if (!isAuthenticating && !galleryIsLoggedIn) {
+            console.log('Gallery is not loged in');
             setIsLoading(false);
             setShowLogin(true);
             setShowGallery(false);
           }
         } else if (!isAuthenticating && data.data.images) {
-          console.log('SET DATA');
+          console.log('SET DATA OHNE Protected');
           setGalleryData(data.data);
           setShowGallery(true);
           setShowLogin(false);
