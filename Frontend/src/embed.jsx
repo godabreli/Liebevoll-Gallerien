@@ -10,6 +10,7 @@ import desctopSliderElementStyles from './galleries/GalleryItems/DesctopSliderEl
 import EmbedGalleryLoginStyles from './Embed/Gallery/EmbedGalleryLogin.css?inline';
 import EmbedMassonryRowStyle from './Embed/Gallery/EmbedMasonryRow.css?inline';
 import EmbedDesctopSliderElementStyle from './Embed/Gallery/EmbedDesctopSliderElement.css?inline';
+import EmbedMobileSliderElementStyle from './Embed/Gallery/EmbedMobileSliderElement.css?inline';
 
 (function () {
   // 1. INJEKTIERE CSS
@@ -29,7 +30,9 @@ import EmbedDesctopSliderElementStyle from './Embed/Gallery/EmbedDesctopSliderEl
     '\n' +
     EmbedMassonryRowStyle +
     '\n' +
-    EmbedDesctopSliderElementStyle; // Alle Styles zusammenfügen
+    EmbedDesctopSliderElementStyle +
+    '\n' +
+    EmbedMobileSliderElementStyle; // Alle Styles zusammenfügen
   document.head.appendChild(styleTag);
 
   const scriptTag = document.currentScript;
