@@ -37,6 +37,7 @@ const EmbedGallery = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log(showGallery);
       try {
         const res = await fetch(
           `https://liebevollbelichtet.de/api/galleries/my-galleries/${galleryName}`
