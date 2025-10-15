@@ -64,6 +64,8 @@ const EmbedGallery = (props) => {
             const data = await res.json();
 
             setGalleryData(data.data);
+            setShowGallery(true);
+            setShowLogin(false);
             setIsLoading(false);
             return;
           } else if (!isAuthenticating && !galleryIsLoggedIn) {
