@@ -341,7 +341,7 @@ const EmbedGallery = (props) => {
           oneImageDownloadHandler,
         }}
       >
-        {!showLogin && (
+        {galleryData?images && (
           <EmbedMasonryRow
             galleryData={galleryData}
             galleryWidth={galleryWidth}
