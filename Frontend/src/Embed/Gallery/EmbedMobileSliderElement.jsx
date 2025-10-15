@@ -2,7 +2,6 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Helmet } from 'react-helmet';
 
-import './MobileSliderElement.css';
 import { useCallback } from 'react';
 
 import { API_URL } from '../../util/globalURLS';
