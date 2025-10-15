@@ -31,6 +31,7 @@ const EmbedGallery = (props) => {
   const [downloads, setDownloads] = useState([]);
   const [checkBoxIsActive, setCheckBoxIsActive] = useState({});
   const [showLogin, setShowLogin] = useState(false);
+  const [showGallery, setShowGallery] = useState(true);
 
   const galleryWraperRef = useRef(null);
 
@@ -76,6 +77,7 @@ const EmbedGallery = (props) => {
           if (!galleryIsLoggedIn) {
             setIsLoading(false);
             setShowLogin(true);
+            setShowGallery(false);
           }
         }
       } catch (err) {
@@ -341,7 +343,7 @@ const EmbedGallery = (props) => {
           oneImageDownloadHandler,
         }}
       >
-        {galleryData?.images && !showLogin && (
+        {showGallery && (
           <EmbedMasonryRow
             galleryData={galleryData}
             galleryWidth={galleryWidth}
