@@ -20,10 +20,6 @@ import EmbedMobileSliderElementStyle from './Embed/Gallery/EmbedMobileSliderElem
     '\n' +
     embedSliderStyles +
     '\n' +
-    mobileSliderElementStyles +
-    '\n' +
-    desctopSliderElementStyles +
-    '\n' +
     EmbedGalleryLoginStyles +
     '\n' +
     EmbedMassonryRowStyle +
