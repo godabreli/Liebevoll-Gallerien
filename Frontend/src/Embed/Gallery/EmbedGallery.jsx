@@ -341,10 +341,12 @@ const EmbedGallery = (props) => {
           oneImageDownloadHandler,
         }}
       >
-        <EmbedMasonryRow
-          galleryData={galleryData}
-          galleryWidth={galleryWidth}
-        />
+        {galleryData?.images && !showLogin && (
+          <EmbedMasonryRow
+            galleryData={galleryData}
+            galleryWidth={galleryWidth}
+          />
+        )}
       </DownloadsContext.Provider>
     </div>
   );
