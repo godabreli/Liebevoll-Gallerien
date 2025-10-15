@@ -237,6 +237,8 @@ const EmbedGallery = (props) => {
     );
   }
 
+  console.log(showGallery);
+
   return (
     <div className="embedGalleryWrapper" ref={galleryWraperRef}>
       {galleryData && galleryData.isProtected && galleryIsLoggedIn && (
