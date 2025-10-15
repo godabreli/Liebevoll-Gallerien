@@ -54,12 +54,17 @@ const EmbedSlider = (props) => {
       <div className="counter-div">{`${index + 1} / ${
         galleryData.images.length
       }`}</div>
-      <div
-        className="downloadButton"
-        onClick={() => downloadVars.oneImageDownloadHandler(index)}
-      >
-        <DownloadButton02 color="rgba(255, 255, 255, 0.586)" strokeWidth="11" />
-      </div>
+      {galleryData?.isProtected && (
+        <div
+          className="downloadButton"
+          onClick={() => downloadVars.oneImageDownloadHandler(index)}
+        >
+          <DownloadButton02
+            color="rgba(255, 255, 255, 0.586)"
+            strokeWidth="11"
+          />
+        </div>
+      )}
 
       <div
         className="closeSliderButton"
