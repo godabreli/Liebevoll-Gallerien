@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { motion } from 'motion/react';
 
 import EmbedDesctopSliderElement from './EmbedDesctopSliderElement';
-import MobileSliderElement from '../../galleries/GalleryItems/MobileSliderElement';
+import EmbedMobileSliderElement from './EmbedMobileSliderElement';
 
 import XButtonSVG from '../../SVG/XButtonSVG';
 import DownloadButton02 from '../../SVG/Downloadbutton02';
@@ -39,7 +39,7 @@ const EmbedSlider = (props) => {
       className="imageSlider"
     >
       {window.innerWidth < 768 ? (
-        <MobileSliderElement
+        <EmbedMobileSliderElement
           toTheLeft={toTheLeft}
           toTheRight={toTheRight}
           galleryData={galleryData}
