@@ -67,12 +67,10 @@ const EmbedGallery = (props) => {
             setShowLogin(false);
             setIsLoading(false);
           } else if (!isAuthenticating && !galleryIsLoggedIn) {
-            console.log('Gallery is not loged in');
             setIsLoading(false);
             setShowLogin(true);
           }
         } else if (!isAuthenticating && data.data.images) {
-          console.log('SET DATA OHNE Protected');
           setGalleryData(data.data);
           setShowLogin(false);
           setIsLoading(false);
@@ -233,8 +231,6 @@ const EmbedGallery = (props) => {
       </div>
     );
   }
-
-  console.log(showGallery);
 
   return (
     <div className="embedGalleryWrapper" ref={galleryWraperRef}>
