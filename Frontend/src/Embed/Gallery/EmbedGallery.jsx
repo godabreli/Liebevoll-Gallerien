@@ -73,6 +73,8 @@ const EmbedGallery = (props) => {
           }
         } else {
           setGalleryData(data.data);
+          setShowGallery(true);
+          setShowLogin(false);
           setIsLoading(false);
         }
       } catch (err) {
