@@ -134,8 +134,6 @@ const EmbedMobileSliderElement = (props) => {
 
   const slide = useCallback(
     (e) => {
-      e.preventDefault();
-
       if (hasSwipedRef.current || isPinchingRef.current) return;
 
       const slider = sliderRef.current;
@@ -181,7 +179,6 @@ const EmbedMobileSliderElement = (props) => {
   const handleTouchMove = useCallback(
     (e) => {
       if (e.touches.length === 2 && !oneFingerMoveRef.current) {
-        e.preventDefault();
         isPinchingRef.current = true;
 
         const newDistnce = getDistance(e.touches[0], e.touches[1]);
@@ -211,8 +208,6 @@ const EmbedMobileSliderElement = (props) => {
       ///////////////////////////////////////////////////////////////////////////
 
       if (e.touches.length === 2 && oneFingerMoveRef.current) {
-        e.preventDefault();
-
         if (imageWrapperRef.current) {
           imageWrapperRef.current.style.transition = 'none';
           imageWrapperRef.current.style.transform = `scale(${
@@ -236,7 +231,6 @@ const EmbedMobileSliderElement = (props) => {
       ///////////////////////////////////////////////////////////////////////////////////
 
       if (e.touches.length === 1 && isPinchingRef.current) {
-        e.preventDefault();
         oneFingerMoveRef.current = true;
 
         if (imageWrapperRef.current) {
