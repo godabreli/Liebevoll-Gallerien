@@ -1,11 +1,11 @@
-.embedSliderElement {
+.sliderElement {
   width: calc(100vw * 3);
   height: 100vh;
   display: flex;
   overflow: hidden;
 }
 
-.embedImageelemntWrapper {
+.imageelemntWrapper {
   width: 100vw;
   height: 100%;
   display: flex;
@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-.EmbedImageSlider-image {
+.imageSlider-image {
   height: 100%;
   width: 100%;
   object-fit: cover;

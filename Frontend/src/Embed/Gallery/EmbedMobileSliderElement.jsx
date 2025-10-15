@@ -2,7 +2,10 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Helmet } from 'react-helmet';
 
+import './MobileSliderElement.css';
 import { useCallback } from 'react';
+
+import { API_URL } from '../../util/globalURLS';
 
 const SWIPE_THRESHOLD = 160;
 const DRAG_SENSITIVITY = 15;
@@ -334,10 +337,10 @@ const EmbedMobileSliderElement = (props) => {
         onTouchStart={(e) => handleTouchStart(e)}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="EmbedSliderElement"
+        className="sliderElement"
         style={{ touchAction: 'none' }}
       >
-        <div className="embedImageelemntWrapper">
+        <div className="imageelemntWrapper">
           <div className="imageSlider-imageWrapper" style={prevImageStyle}>
             <img
               src={
@@ -355,11 +358,11 @@ const EmbedMobileSliderElement = (props) => {
                     : imageIndex - 1
                 ].altText || 'Wedding-photography'
               }
-              className="EmbedImageSlider-image"
+              className="imageSlider-image"
             />
           </div>
         </div>
-        <div className="embedImageelemntWrapper" ref={imageWrapperRef}>
+        <div className="imageelemntWrapper" ref={imageWrapperRef}>
           <div
             // layoutId={hasAnimatedRef.current ? undefined : `image-${imageIndex}`}
             // transition={{ type: 'spring', duration: 0.5 }}
@@ -374,11 +377,11 @@ const EmbedMobileSliderElement = (props) => {
               alt={
                 galleryData.images[imageIndex].altText || 'Wedding-photography'
               }
-              className="EmbedImageSlider-image"
+              className="imageSlider-image"
             />
           </div>
         </div>
-        <div className="embedImageelemntWrapper">
+        <div className="imageelemntWrapper">
           <div className="imageSlider-imageWrapper" style={nextImageStyle}>
             <img
               src={
@@ -396,7 +399,7 @@ const EmbedMobileSliderElement = (props) => {
                     : imageIndex + 1
                 ].altText || 'Wedding-photography'
               }
-              className="embedImageSlider-image"
+              className="imageSlider-image"
             />
           </div>
         </div>
