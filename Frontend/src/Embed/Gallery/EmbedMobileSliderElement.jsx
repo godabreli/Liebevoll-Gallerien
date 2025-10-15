@@ -342,14 +342,13 @@ const EmbedMobileSliderElement = (props) => {
         <div className="imageelemntWrapper">
           <div className="imageSlider-imageWrapper" style={prevImageStyle}>
             <img
-              src={
-                'https://liebevollbelichtet.de/' +
+              src={`https://liebevollbelichtet.de/${
                 galleryData.images[
                   imageIndex === 0
                     ? galleryData.images.length - 1
                     : imageIndex - 1
                 ].path
-              }
+              }`}
               alt={
                 galleryData.images[
                   imageIndex === 0
@@ -369,10 +368,7 @@ const EmbedMobileSliderElement = (props) => {
             style={currentImageStyle}
           >
             <img
-              src={
-                'https://liebevollbelichtet.de/' +
-                galleryData.images[imageIndex].path
-              }
+              src={`https://liebevollbelichtet.de/${galleryData.images[imageIndex].path}`}
               alt={
                 galleryData.images[imageIndex].altText || 'Wedding-photography'
               }
@@ -383,14 +379,13 @@ const EmbedMobileSliderElement = (props) => {
         <div className="imageelemntWrapper">
           <div className="imageSlider-imageWrapper" style={nextImageStyle}>
             <img
-              src={
-                'https://liebevollbelichtet.de/' +
+              src={`https://liebevollbelichtet.de/${
                 galleryData.images[
                   imageIndex === galleryData.images.length - 1
                     ? 0
                     : imageIndex + 1
                 ].path
-              }
+              }`}
               alt={
                 galleryData.images[
                   imageIndex === galleryData.images.length - 1
