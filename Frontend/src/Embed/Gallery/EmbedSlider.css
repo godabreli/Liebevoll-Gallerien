@@ -44,10 +44,6 @@
   user-select: none;
 }
 
-.downloadButton:hover {
-  background: rgba(255, 255, 255, 0.175);
-}
-
 .closeSliderButton {
   position: absolute;
   display: flex;
@@ -66,13 +62,13 @@
   user-select: none;
 }
 
-.closeSliderButton span {
-  transform: translateY(-10%);
-  display: inline-block;
-}
-
-.closeSliderButton:hover {
-  background: rgba(255, 255, 255, 0.175);
+@media (hover: hover) and (pointer: fine) {
+  .downloadButton:hover {
+    background: rgba(255, 255, 255, 0.175);
+  }
+  .closeSliderButton:hover {
+    background: rgba(255, 255, 255, 0.175);
+  }
 }
 
 .errow-div {
