@@ -6,7 +6,7 @@ import EmbedMobileSliderElement from './EmbedMobileSliderElement';
 
 import XButtonSVG from '../../SVG/XButtonSVG';
 import DownloadButton02 from '../../SVG/Downloadbutton02';
-import { DownloadsContext } from './downloads-context';
+import { DownloadsContext } from '../downloads-context';
 
 const EmbedSlider = (props) => {
   const { galleryData, imageIndex } = props;

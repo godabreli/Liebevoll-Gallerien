@@ -4,12 +4,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import EmbedMasonryRow from './EmbedMasonryRow';
 import EmbedGalleryLogin from './EmbedGalleryLogin';
 import DownloadButton02 from '../../SVG/Downloadbutton02';
+import EmbedLoadinSpinner from '../UI-Components/EmbedLoadinSpinner';
 
 import { useEmbedAuthHook } from '../embed-auth-hook';
 
-import { API_URL } from '../../util/globalURLS';
+import { EMBED_URL } from '../../util/globalURLS';
 
-import { DownloadsContext } from './downloads-context';
+import { DownloadsContext } from '../downloads-context';
 
 const EmbedGallery = (props) => {
   const {
@@ -31,7 +32,6 @@ const EmbedGallery = (props) => {
   const [downloads, setDownloads] = useState([]);
   const [checkBoxIsActive, setCheckBoxIsActive] = useState({});
   const [showLogin, setShowLogin] = useState(false);
-  const [showGallery, setShowGallery] = useState(true);
 
   const galleryWraperRef = useRef(null);
 
@@ -39,7 +39,7 @@ const EmbedGallery = (props) => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `https://liebevollbelichtet.de/api/galleries/my-galleries/${galleryName}`
+          `${EMBED_URL}api/galleries/my-galleries/${galleryName}`
         );
 
         if (!res.ok) {
@@ -51,7 +51,7 @@ const EmbedGallery = (props) => {
         if (data.data.isProtected) {
           if (!isAuthenticating && galleryIsLoggedIn) {
             const res = await fetch(
-              `https://liebevollbelichtet.de/api/galleries/get-gallery/${galleryName}`,
+              `${EMBED_URL}api/galleries/get-gallery/${galleryName}`,
               {
                 method: 'GET',
                 headers: { Authorization: 'Bearer ' + galleryToken },
@@ -127,7 +127,7 @@ const EmbedGallery = (props) => {
       setIsLoading(true);
 
       const response = await fetch(
-        'https://liebevollbelichtet.de/api/galleries/downloads/download-images',
+        EMBED_URL + 'api/galleries/downloads/download-images',
         {
           method: 'POST',
           headers: {
@@ -176,7 +176,7 @@ const EmbedGallery = (props) => {
 
     try {
       const response = await fetch(
-        'https://liebevollbelichtet.de/api/galleries/downloads/download-one-image',
+        EMBED_URL + 'api/galleries/downloads/download-one-image',
         {
           method: 'POST',
           body: JSON.stringify({
@@ -224,16 +224,17 @@ const EmbedGallery = (props) => {
     galleryLogout();
   };
 
-  if (isLoading || isAuthenticating) {
-    return (
-      <div style={{ padding: '20px', textAlign: 'center' }}>
-        <h1>LOADING...</h1>
-      </div>
-    );
-  }
+  // if (isLoading || isAuthenticating) {
+  //   return (
+  //     <div style={{ padding: '20px', textAlign: 'center' }}>
+  //       <EmbedLoadinSpinner />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="embedGalleryWrapper" ref={galleryWraperRef}>
+      {(isLoading || isAuthenticating) && <EmbedLoadinSpinner />}
       {galleryData && galleryData.isProtected && galleryIsLoggedIn && (
         <div className="embedGalleryButtonsWrapper">
           <div

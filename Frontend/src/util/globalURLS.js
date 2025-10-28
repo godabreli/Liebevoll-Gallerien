@@ -1,6 +1,6 @@
 const env = 'prod';
 
-export const url = () => {
+const url = () => {
   if (env === 'prod') {
     return '/';
   }
@@ -13,5 +13,16 @@ export const url = () => {
     return 'http://192.168.1.112:5000/';
   }
 };
+
+const embedUrl = () => {
+  if (env === 'prod') {
+    return 'https://liebevollbelichtet.de/';
+  }
+  if (env === 'dev') {
+    return 'http://localhost:5000/';
+  }
+};
+
+export const EMBED_URL = embedUrl();
 
 export const API_URL = url();

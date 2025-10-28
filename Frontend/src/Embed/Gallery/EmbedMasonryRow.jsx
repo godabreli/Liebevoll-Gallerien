@@ -7,10 +7,12 @@ import React, {
 } from 'react';
 import { AnimatePresence } from 'motion/react';
 
-import { DownloadsContext } from './downloads-context';
+import { DownloadsContext } from '../downloads-context';
 
 import EmbedGalleryItem from './EmbedGalleryItem';
 import EmbedSlider from './EmbedSlider';
+
+import { EMBED_URL } from '../../util/globalURLS';
 
 const EmbedMasonryRow = (props) => {
   const galleryRowHeight = 500;
@@ -327,9 +329,7 @@ const EmbedMasonryRow = (props) => {
                   top: image.topPosition,
                   left: image.leftPosition,
                 }}
-                imageSrc={`https://liebevollbelichtet.de/${
-                  galleryData.images[image.index].path
-                }`}
+                imageSrc={EMBED_URL + galleryData.images[image.index].path}
                 alt={
                   galleryData.images[image.index].altText ||
                   'fotograf fotografiert modelle'
