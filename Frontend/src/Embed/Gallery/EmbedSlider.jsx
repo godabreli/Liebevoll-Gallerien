@@ -95,10 +95,30 @@ const EmbedSlider = (props) => {
         />
       </div>
       <div className="errow-div errow-div-left" onClick={toTheLeft}>
-        <div className="errow">&#65513;</div>
+        <div
+          className="errow"
+          style={{
+            color:
+              downloadVars.mode === 'bright'
+                ? 'rgb(255, 255, 255)'
+                : 'rgb(0, 0, 0)',
+          }}
+        >
+          &#65513;
+        </div>
       </div>
       <div className="errow-div errow-div-right" onClick={toTheRight}>
-        <div className="errow">&#65515;</div>
+        <div
+          className="errow"
+          style={{
+            color:
+              downloadVars.mode === 'bright'
+                ? 'rgb(255, 255, 255)'
+                : 'rgb(0, 0, 0)',
+          }}
+        >
+          &#65515;
+        </div>
       </div>
     </motion.div>
   );

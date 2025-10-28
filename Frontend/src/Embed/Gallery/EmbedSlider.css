@@ -63,9 +63,11 @@
 
 @media (hover: hover) and (pointer: fine) {
   .downloadButton:hover {
+    transform: scale(1.1);
     background: rgba(255, 255, 255, 0.175);
   }
   .closeSliderButton:hover {
+    transform: scale(1.1);
     background: rgba(255, 255, 255, 0.175);
   }
 }
@@ -92,7 +94,6 @@
 }
 
 .errow {
-  color: rgba(255, 255, 255, 0.586);
   font-size: 2.7rem;
   font-weight: 100;
   border-radius: 100px;
@@ -107,6 +108,7 @@
 }
 
 .errow:hover {
+  transform: scale(1.1);
   background: rgba(255, 255, 255, 0.175);
 }
 
