@@ -57,16 +57,26 @@ const EmbedSlider = (props) => {
           imageIndex={index}
         />
       )}
-      <div className="counter-div">{`${index + 1} / ${
-        galleryData.images.length
-      }`}</div>
+      <div
+        className="counter-div"
+        style={{
+          color:
+            downloadVars.mode === 'bright'
+              ? 'rgba(0,0,0)'
+              : 'rgba(255, 255, 255, 0.586)',
+        }}
+      >{`${index + 1} / ${galleryData.images.length}`}</div>
       {galleryData?.isProtected && (
         <div
           className="downloadButton"
           onClick={() => downloadVars.oneImageDownloadHandler(index)}
         >
           <DownloadButton02
-            color="rgba(255, 255, 255, 0.586)"
+            color={
+              downloadVars.mode === 'bright'
+                ? 'rgba(0,0,0)'
+                : 'rgba(255, 255, 255, 0.586)'
+            }
             strokeWidth="11"
           />
         </div>
@@ -76,7 +86,13 @@ const EmbedSlider = (props) => {
         className="closeSliderButton"
         onClick={() => props.closeSlider(index)}
       >
-        <XButtonSVG color="rgba(255, 255, 255, 0.586)" />
+        <XButtonSVG
+          color={
+            downloadVars.mode === 'bright'
+              ? 'rgba(0,0,0)'
+              : 'rgba(255, 255, 255, 0.586)'
+          }
+        />
       </div>
       <div className="errow-div errow-div-left" onClick={toTheLeft}>
         <div className="errow">&#65513;</div>
