@@ -6,6 +6,9 @@ import EmbedMobileSliderElement from './EmbedMobileSliderElement';
 
 import XButtonSVG from '../../SVG/XButtonSVG';
 import DownloadButton02 from '../../SVG/Downloadbutton02';
+import ErrowLeftSVG from '../../SVG/ErrowLeftSVG';
+import ErrowRightSVG from '../../SVG/ErrowRightSVG';
+
 import { DownloadsContext } from '../downloads-context';
 
 const EmbedSlider = (props) => {
@@ -95,29 +98,21 @@ const EmbedSlider = (props) => {
         />
       </div>
       <div className="errow-div errow-div-left" onClick={toTheLeft}>
-        <div
-          className="errow"
-          style={{
-            color:
-              downloadVars.mode === 'bright'
-                ? 'rgb(0,0,0)'
-                : 'rgb(255,255,255)',
-          }}
-        >
-          &#65513;
+        <div className="errow">
+          <ErrowLeftSVG
+            color={
+              downloadVars.mode === 'bright' ? 'rgb(0,0,0)' : 'rgb(255,255,255)'
+            }
+          />
         </div>
       </div>
       <div className="errow-div errow-div-right" onClick={toTheRight}>
-        <div
-          className="errow"
-          style={{
-            color:
-              downloadVars.mode === 'bright'
-                ? 'rgb(0,0,0)'
-                : 'rgb(255,255,255)',
-          }}
-        >
-          &#65515;
+        <div className="errow">
+          <ErrowRightSVG
+            color={
+              downloadVars.mode === 'bright' ? 'rgb(0,0,0)' : 'rgb(255,255,255)'
+            }
+          />
         </div>
       </div>
     </motion.div>
