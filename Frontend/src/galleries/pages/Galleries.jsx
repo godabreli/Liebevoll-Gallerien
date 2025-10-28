@@ -102,7 +102,7 @@ function Galleries() {
                   <img
                     className="galleries-image"
                     src={`${API_URL}${gallery.images[0].path}`}
-                    alt={gallery.images[0].altText || 'Wedding emage'}
+                    alt={gallery.images[0].altText || 'image'}
                   />
                   <div className="title-buttons-wrapper">
                     <div className="gallery-title">{gallery.name}</div>

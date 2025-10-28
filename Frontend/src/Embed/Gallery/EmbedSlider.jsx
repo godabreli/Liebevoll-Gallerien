@@ -37,6 +37,12 @@ const EmbedSlider = (props) => {
           : { y: 1000, transition: { duration: 0.3 } }
       }
       className="imageSlider"
+      style={{
+        background:
+          downloadVars.mode === 'bright'
+            ? 'rgb(255, 255, 255)'
+            : 'rgb(0, 0, 0)',
+      }}
     >
       {window.innerWidth < 768 ? (
         <EmbedMobileSliderElement

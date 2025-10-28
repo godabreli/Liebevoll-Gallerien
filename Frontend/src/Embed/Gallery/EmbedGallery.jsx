@@ -21,7 +21,7 @@ const EmbedGallery = (props) => {
     galleryLogout,
   } = useEmbedAuthHook();
 
-  const galleryName = props.galleryName;
+  const { galleryName, mode } = props;
 
   const [galleryData, setGalleryData] = useState(null);
   const [galleryWidth, setGalleryWidth] = useState(null);
@@ -337,6 +337,7 @@ const EmbedGallery = (props) => {
           checkBoxIsActive,
           setCheckBoxIsActive,
           oneImageDownloadHandler,
+          mode,
         }}
       >
         {!showLogin && (

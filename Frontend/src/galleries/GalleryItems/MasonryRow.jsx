@@ -417,7 +417,7 @@ const MasonryRow = ({ galleryData, galleryWidth }) => {
                   downloads.length > 0 ? 'downloadsActive' : 'default'
                 }
                 src={API_URL + galleryData.images[image.index].path}
-                alt={galleryData.images[image.index].altText || 'Wedding image'}
+                alt={galleryData.images[image.index].altText || 'image'}
                 imageOnClick={
                   downloads.length > 0
                     ? () => downloadCheckboxHandler(image.index)

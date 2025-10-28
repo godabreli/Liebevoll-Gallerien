@@ -36,10 +36,11 @@ import LoadingSpinnerStyle from './Embed/UI-Components/EmbedLoadingSpinner.css?i
   const container = scriptTag.parentNode;
 
   const galleryName = scriptTag.dataset.galleryName || 'default';
+  const mode = scriptTag.dataset.mode || 'dark';
 
   const galleryRoot = document.createElement('div');
   container.appendChild(galleryRoot);
 
   const root = createRoot(galleryRoot);
-  root.render(<EmbedGallery galleryName={galleryName} />);
+  root.render(<EmbedGallery galleryName={galleryName} mode={mode} />);
 })();

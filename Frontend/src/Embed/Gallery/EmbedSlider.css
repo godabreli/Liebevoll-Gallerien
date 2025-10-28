@@ -1,7 +1,6 @@
 .imageSlider {
   width: 100vw;
   height: 100vh;
-  background: black;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -114,10 +113,6 @@
 @media (max-width: 768px) {
   .errow-div {
     display: none;
-  }
-
-  .downloadButton:hover {
-    background: none;
   }
 
   .downloadButton:active {
