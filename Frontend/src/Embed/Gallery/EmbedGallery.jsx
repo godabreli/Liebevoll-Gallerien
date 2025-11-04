@@ -235,6 +235,12 @@ const EmbedGallery = (props) => {
     setAnimateDropDownMenue(false);
     setShowDropdownMenue(false);
     galleryLogout();
+
+    window.dispatchEvent(
+      new CustomEvent('galleryLogout', {
+        detail: { galleryLogout: true },
+      })
+    );
   };
 
   return (
