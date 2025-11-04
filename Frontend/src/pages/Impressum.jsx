@@ -1,6 +1,6 @@
-import './Impressum.css';
-
 import React from 'react';
+
+import './Impressum.css';
 
 const Impressum = () => {
   return (

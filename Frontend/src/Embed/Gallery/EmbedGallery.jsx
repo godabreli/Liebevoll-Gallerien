@@ -66,6 +66,12 @@ const EmbedGallery = (props) => {
             setGalleryData(data.data);
             setShowLogin(false);
             setIsLoading(false);
+            // 🎯 Custom Event feuern, wenn Galerie fertig geladen ist
+            window.dispatchEvent(
+              new CustomEvent('galleryLoaded', {
+                detail: { galleryName, images: data.data.images?.length || 0 },
+              })
+            );
           } else if (!isAuthenticating && !galleryIsLoggedIn) {
             setIsLoading(false);
             setShowLogin(true);
@@ -74,6 +80,13 @@ const EmbedGallery = (props) => {
           setGalleryData(data.data);
           setShowLogin(false);
           setIsLoading(false);
+
+          // 🎯 Custom Event feuern, wenn Galerie fertig geladen ist
+          window.dispatchEvent(
+            new CustomEvent('galleryLoaded', {
+              detail: { galleryName, images: data.data.images?.length || 0 },
+            })
+          );
         }
       } catch (err) {
         console.log(err);
@@ -223,14 +236,6 @@ const EmbedGallery = (props) => {
     setShowDropdownMenue(false);
     galleryLogout();
   };
-
-  // if (isLoading || isAuthenticating) {
-  //   return (
-  //     <div style={{ padding: '20px', textAlign: 'center' }}>
-  //       <EmbedLoadinSpinner />
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="embedGalleryWrapper" ref={galleryWraperRef}>
