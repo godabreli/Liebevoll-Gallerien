@@ -232,7 +232,6 @@ const EmbedGallery = (props) => {
     if (e) {
       e.stopPropagation();
     }
-    console.log('Logout Button gedrückt');
     setAnimateDropDownMenue(false);
     setShowDropdownMenue(false);
     galleryLogout();
