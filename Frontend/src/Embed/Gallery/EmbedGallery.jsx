@@ -5,6 +5,7 @@ import EmbedMasonryRow from './EmbedMasonryRow';
 import EmbedGalleryLogin from './EmbedGalleryLogin';
 import DownloadButton02 from '../../SVG/Downloadbutton02';
 import EmbedLoadinSpinner from '../UI-Components/EmbedLoadinSpinner';
+import ErrowLeftSVG from '../../SVG/ErrowLeftSVG';
 
 import { useEmbedAuthHook } from '../embed-auth-hook';
 
@@ -333,7 +334,7 @@ const EmbedGallery = (props) => {
           }`}
           onClick={scrollToTop}
         >
-          {'>'}
+          <ErrowLeftSVG collor="rgb(255,255,255)" />
         </div>
       )}
 
