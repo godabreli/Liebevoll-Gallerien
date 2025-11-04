@@ -334,7 +334,7 @@ const EmbedGallery = (props) => {
           }`}
           onClick={scrollToTop}
         >
-          <ErrowLeftSVG collor="rgb(255,255,255)" />
+          <ErrowLeftSVG color="rgb(255,255,255)" />
         </div>
       )}
 
