@@ -68,5 +68,6 @@
 @media (max-width: 760px) {
   .embedGalleryLoginCard {
     width: 95%;
+    min-width: none;
   }
 }
