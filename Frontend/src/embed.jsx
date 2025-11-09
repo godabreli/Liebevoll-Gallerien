@@ -32,7 +32,7 @@ import LoadingSpinnerStyle from './Embed/UI-Components/EmbedLoadingSpinner.css?i
     LoadingSpinnerStyle; // Alle Styles zusammenfügen
   document.head.appendChild(styleTag);
 
-  const scriptTag = document.currentScript;
+  const scriptTag = document.getElementById('embed-gallery-script');
   const container = scriptTag.parentNode;
 
   const galleryName = scriptTag.dataset.galleryName || 'default';
