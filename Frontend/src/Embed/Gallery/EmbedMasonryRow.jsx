@@ -234,6 +234,8 @@ const EmbedMasonryRow = (props) => {
     window.scrollTo(0, imagesTopPositionsRef.current[index]);
     setOpenSlider(false);
 
+    console.log(imagesTopPositionsRef.current);
+
     window.dispatchEvent(
       new CustomEvent('scrollDiv', {
         detail: { topPosition: imagesTopPositionsRef.current[index] },
