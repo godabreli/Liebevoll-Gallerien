@@ -295,7 +295,7 @@ const EmbedMasonryRow = (props) => {
           <EmbedSlider
             galleryData={galleryData}
             imageIndex={imageIndex}
-            imagesTopPositions={imagesTopPositions}
+            imagesTopPositions={imagesTopPositionsRef.current}
             closeSlider={closeSliderHandler}
             galleryRowHeight={galleryRowHeightRef.current}
           />
