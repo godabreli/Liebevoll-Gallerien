@@ -17,7 +17,6 @@ import { EMBED_URL } from '../../util/globalURLS';
 const EmbedMasonryRow = (props) => {
   const galleryRowHeight = 500;
   const gap = 5;
-  const imagesTopPositions = [];
 
   const { galleryData, galleryWidth } = props;
 
@@ -30,6 +29,7 @@ const EmbedMasonryRow = (props) => {
   const indexRef = useRef();
   const imageTopPositionRef = useRef();
   const galleryRowHeightRef = useRef(galleryRowHeight);
+  const imagesTopPositionsRef = useRef([]);
 
   const downloadVars = useContext(DownloadsContext);
 
@@ -64,6 +64,7 @@ const EmbedMasonryRow = (props) => {
             });
 
             rows.push(galleryRow);
+            imagesTopPositionsRef.current.push(imageTopPositionRef.current);
 
             imageTopPositionRef.current += height + gap;
           });
@@ -109,6 +110,7 @@ const EmbedMasonryRow = (props) => {
                 topPosition: imageTopPositionRef.current,
               });
               indexRef.current += 1;
+              imagesTopPositionsRef.current.push(imageTopPositionRef.current);
             } else {
               if (widthcounter > galleryWidth) {
                 indexRef.current = indexRef.current - imageCounter;
@@ -126,6 +128,9 @@ const EmbedMasonryRow = (props) => {
                   });
                   leftPosition += newWidth + gap;
                   indexRef.current += 1;
+                  imagesTopPositionsRef.current.push(
+                    imageTopPositionRef.current
+                  );
                 }
               }
 
@@ -148,6 +153,9 @@ const EmbedMasonryRow = (props) => {
                   });
                   leftPosition += newWidth + gap;
                   indexRef.current += 1;
+                  imagesTopPositionsRef.current.push(
+                    imageTopPositionRef.current
+                  );
                 }
               }
 
@@ -165,6 +173,9 @@ const EmbedMasonryRow = (props) => {
                   });
                   leftPosition += newWidth + gap;
                   indexRef.current += 1;
+                  imagesTopPositionsRef.current.push(
+                    imageTopPositionRef.current
+                  );
                 }
               }
             }
@@ -183,13 +194,13 @@ const EmbedMasonryRow = (props) => {
 
   /////////////////////////////////////////////////////////////////////////////////
 
-  if (galleryRows) {
-    galleryRows.forEach((rows) => {
-      rows.forEach((row) => {
-        imagesTopPositions.push(row.topPosition);
-      });
-    });
-  }
+  // if (galleryRows) {
+  //   galleryRows.forEach((rows) => {
+  //     rows.forEach((row) => {
+  //       imagesTopPositions.push(row.topPosition);
+  //     });
+  //   });
+  // }
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -230,7 +241,7 @@ const EmbedMasonryRow = (props) => {
   }, []);
 
   const closeSliderHandler = (index) => {
-    window.scrollTo(0, imagesTopPositions[index]);
+    window.scrollTo(0, imagesTopPositionsRef.current[index]);
     setOpenSlider(false);
 
     if (document.fullscreenElement) {
