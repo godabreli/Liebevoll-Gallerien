@@ -192,16 +192,6 @@ const EmbedMasonryRow = (props) => {
     calcImagePositions();
   }, [galleryData, galleryWidth]);
 
-  /////////////////////////////////////////////////////////////////////////////////
-
-  // if (galleryRows) {
-  //   galleryRows.forEach((rows) => {
-  //     rows.forEach((row) => {
-  //       imagesTopPositions.push(row.topPosition);
-  //     });
-  //   });
-  // }
-
   //////////////////////////////////////////////////////////////////////////////
 
   const openFullscreen = async () => {
@@ -243,6 +233,12 @@ const EmbedMasonryRow = (props) => {
   const closeSliderHandler = (index) => {
     window.scrollTo(0, imagesTopPositionsRef.current[index]);
     setOpenSlider(false);
+
+    window.dispatchEvent(
+      new CustomEvent('scrollDiv', {
+        detail: { topPosition: imagesTopPositionsRef.current[index] },
+      })
+    );
 
     if (document.fullscreenElement) {
       exitFullscreen();
