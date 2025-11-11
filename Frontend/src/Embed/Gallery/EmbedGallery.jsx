@@ -40,7 +40,8 @@ const EmbedGallery = (props) => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `${EMBED_URL}api/galleries/my-galleries/${galleryName}`
+          `${EMBED_URL}api/galleries/my-galleries/${galleryName}`,
+          { cache: 'no-store' }
         );
 
         if (!res.ok) {
@@ -56,7 +57,8 @@ const EmbedGallery = (props) => {
               {
                 method: 'GET',
                 headers: { Authorization: 'Bearer ' + galleryToken },
-              }
+              },
+              { cache: 'no-store' }
             );
             if (!res.ok) {
               throw new Error('Failed to fetch gallery data.');
@@ -99,6 +101,8 @@ const EmbedGallery = (props) => {
   ///////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
+    if (!galleryWraperRef.current) return;
+
     if (galleryWraperRef.current && galleryData) {
       const width = galleryWraperRef.current.offsetWidth;
       setGalleryWidth(width);
