@@ -67,8 +67,10 @@ export const useEmbedAuthHook = () => {
         storedGalleryData.galleryToken,
         storedGalleryData.expiration
       );
+    } else {
+      galleryLogout();
     }
-  }, [galleryLogin]);
+  }, [galleryLogin, galleryLogout]);
 
   return {
     galleryToken,
